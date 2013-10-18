@@ -1,0 +1,19 @@
+<%= div_for video do %>
+  <% if video.file_processing %>
+    <div class="processing_text">
+      <%= t('video.processing')%>
+    </div>
+  <% else %>
+    <%= render partial: 'videos/player', 
+               object: video,
+               as: :video %>
+  <% end %>
+<% end %> 
+
+<%= javascript_tag do %>
+  $(function() {
+    <% unless video.file_processing %>
+      SocialStream.Video.show();
+    <% end %>
+  });
+<% end %>

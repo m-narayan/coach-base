@@ -1,0 +1,6 @@
+<section id="documents">
+
+  <% if profile_or_current_subject.present? %>
+    <%= render :partial => 'common_documents/index', :locals => { :documents => collection } %>
+  <% end %>
+</section>

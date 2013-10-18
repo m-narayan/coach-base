@@ -1,0 +1,21 @@
+<% photos = @place.photos %>
+<% unless photos.empty? %>
+  <% if photos.length == 1 %>
+  <div class="no-carousel"><%= thumb_for(photos.first, '500') %></div>
+  <% else %>
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item"><%= thumb_for(photos.first, '500') %></div>
+        <% photos[1..(photos.length() -1)].each do |p| %>
+          <div class="item"><%= thumb_for(p, '500') %></div>
+        <% end %>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+  <% end %>
+<% end %>
+
+

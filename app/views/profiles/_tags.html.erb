@@ -1,0 +1,20 @@
+<section class="tags">
+  <header>
+    <%= render partial: 'edit_icon' %>
+    <h4>
+      <%= t('profile.tags.other') %>
+    </h4>
+  </header>
+  <div class="briefing"> 
+    <% if @profile.subject.tag_list.count > 0 %>
+      <%= tag_list @profile.subject %>
+    <% else %>
+      <%= render partial: 'empty' %>
+    <% end %>
+  </div>
+    <% if can?(:update, @profile) %>
+    <div class="update">
+      <%= render partial: 'tags_edit' %>
+    </div>
+  <% end %>
+</section>

@@ -1,0 +1,16 @@
+<section id="frontpage">
+ <!--  <%= render :partial => "layouts/explanation" %> -->
+
+<div>
+
+ 	<%= link_to "HR Agent Login", new_session_path(resource_name) , class: "move-to-right-top"%>
+	
+  
+    <%= link_to "Join Us", new_registration_path(resource_name),class: "move-to-right-top" %>
+  
+</div>
+  
+  <%= render partial: 'devise/sessions/form' %>
+
+  <%= render partial: 'frontpage/presentation' %>
+</section>

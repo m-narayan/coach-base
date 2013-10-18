@@ -1,0 +1,9 @@
+<% if @custom.destroyed? %>
+  SocialStream.RelationCustom.destroy({
+    relation: {
+      id: <%= @custom.id %>
+    }
+  });
+<% else %>
+  SocialStream.Flash.error('<%= @custom.errors.full_messages.to_sentence %>');
+<% end %>

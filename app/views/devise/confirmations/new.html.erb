@@ -1,0 +1,24 @@
+<section id="confirmation">
+  <section class="instructions">
+    <header>
+      <h3>
+        Resend confirmation instructions
+      </h3>
+    
+      <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method  => :post }) do |f| %>
+        <%= devise_error_messages! %>
+    </header>
+    <section class="confirmation">
+      <%= f.label :email %>
+
+      <%= f.email_field :email, :autofocus => true %>
+
+      <%= f.submit "Resend confirmation instructions" %>
+
+      <hr class="soften">
+      
+      <%= render "devise/shared/links" %>
+    </section>
+    <% end %>
+  </section>
+</section>

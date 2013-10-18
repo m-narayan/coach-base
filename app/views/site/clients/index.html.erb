@@ -1,0 +1,35 @@
+<section id="site_clients" class="first-img">
+
+    <%= render partial: 'toolbar/home' %>
+
+  <section class="site_clients">
+    <header>
+      <h3>
+        <%= link_to t('site.client.new.link'), polymorphic_path(resource_class.new, action: 'new'), class: "new_site_client-modal-link", 'data-toggle' => 'modal'  %>
+        
+        Applications
+      </h3>
+    </header>
+    <div class="tabbable"> <!-- Only required for left/right tabs -->
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab"><%= t 'site.client.managing' %></a></li>
+      </ul>  
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <%= render partial: 'list',
+                   object: collection %>
+      </div>
+    </div>
+
+    <div class="tab-content">
+      <div class="tab-pane" id="tab2">
+        <%= render partial: 'list',
+                   object: collection %>
+      </div>
+    </div>
+
+    <%= render partial: 'new.modal' %>
+  </section>
+</section>

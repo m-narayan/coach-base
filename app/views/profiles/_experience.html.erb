@@ -1,0 +1,22 @@
+<section class="experience">
+  <header>
+    <%= render partial: 'edit_icon' %>
+    <h4>
+      <%= t("profile.#{ @profile.subject.class.to_s.downcase }.experience") %>
+    </h4>
+  </header>
+
+  <div class="briefing">
+    <% if @profile.experience? %>
+      <%= simple_format @profile.experience %>
+    <% else %>
+      <%= render partial: 'empty' %>
+    <% end %>
+  </div>
+
+  <% if can? :update, @profile %>
+    <div class="update">
+      <%= render partial: 'experience_edit' %>
+    </div>
+  <% end %>
+</section>

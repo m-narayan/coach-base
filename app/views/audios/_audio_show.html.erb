@@ -1,0 +1,21 @@
+<%= div_for audio do %>
+  <div class="audio_show">
+    <% if audio.file_processing %>
+      <div class="processing_text">
+        <%= t('audio.processing')%>
+      </div>
+    <% else %>
+      <%= render partial: 'audios/player',
+                 object: audio,
+                 as: :audio %>
+    <% end %>
+  </div>
+<% end %> 
+
+<%= javascript_tag do %>
+  $(function() {
+    SocialStream.Audio.show();
+  });
+<% end %>
+
+

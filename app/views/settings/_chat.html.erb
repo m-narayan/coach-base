@@ -1,0 +1,23 @@
+<div id="chat_settings" class="accordion-group">
+  <header class="accordion-heading">
+    <h5>      
+      <%= link_to t('chat.title'),  "javascript:void(0);", class: 'accordion-toggle', "data-toggle" => 'collapse', "data-parent" => "#settings-accordion", "data-target" => "#chat_settings_content" %>
+    </h5>
+  </header>
+
+  <div class="content settings_content collapse" id="chat_settings_content">
+	  <%= form_tag(:controller => "Xmpp", :action => "updateSettings", :method => "get") do %>
+    <ul  class="settings_block">
+      <li>  
+        <% checked = current_user.chat_enabled %>
+        <%= check_box_tag 'enable_chat', true, checked %>
+        <%= label_tag(:enable_chat, t('chat.settings.checkbox')) %> 
+        <div class="actions center">
+          <%= hidden_field_tag :settings_section, :chat %>
+          <%= submit_tag t('chat.settings.update'), :class => "btn" %>
+        </div>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</div>
