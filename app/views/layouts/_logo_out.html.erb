@@ -16,4 +16,9 @@
     </div>
   <% end %>
   <%= link_to(image_tag('header-logo-index.png', class: "logo", :alt => t('site.name')), root_path) %>
+  <div class="header_menu">
+    <%= link_to "Login", new_session_path(resource_name) , class: "move-to-right-top"%> | 
+    <%= link_to "Coach Sign Up", new_registration_path(resource_name),class: "move-to-right-top" %> | 
+    <%= link_to "User Sign Up", new_registration_path(resource_name),class: "move-to-right-top" %>
+  </div>
 </div>
