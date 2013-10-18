@@ -1,0 +1,22 @@
+<div class="thumb thumb-play">
+  <%= image_tag(video_path(video, :format => :png, :style => '170x127#'))%>
+  <div class="play_over">
+  </div>
+</div>
+
+<div class="text">
+  <h6>
+    <%= video.title %>
+  </h6>
+
+  <%= render partial: 'objects/timeline_description',
+             object: video,
+             as: :obj %>
+
+</div>
+
+<%= render partial: 'videos/player',
+           object: video,
+           as: :video %>
+
+<div class="clearfloat"></div>

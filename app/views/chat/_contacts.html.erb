@@ -1,0 +1,18 @@
+<% @all_contacts =  getChatContacts %>
+
+<div class="users_connected">
+  <%@all_contacts.each do |contact| %>
+    <% if contact.user.connected %>
+      <div class="user_presence" name='<%=contact.name%>' slug='<%=contact.slug%>' connected='true'>
+    <% else %>
+      <div class="user_presence" name='<%=contact.name%>' slug='<%=contact.slug%>' connected='false'>
+    <% end %>
+        <a title='<%=contact.name%>' class="presence_user_link" width="28">
+          <%=image_tag(contact.logo.url, :alt => contact.name , :size => "28x28")%>
+          <% if contact.user.status %>
+            <%=image_tag("status/" + contact.user.status + ".png", :class => "presence_status") %>
+          <% end %>  
+        </a>
+      </div>
+  <%end%>
+</div>

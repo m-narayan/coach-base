@@ -1,0 +1,9 @@
+<% if @event.valid? %>
+  SocialStream.FullCalendar.create({
+    "events": "<%= j raw(Array.wrap(@event.to_json).to_json) %>"
+  });
+<% else %>
+  SocialStream.FullCalendar.getFormEl().setContent("<%= escape_javascript render(partial: 'new') %>");
+
+  Scheduler.form.init(SocialStream.FullCalendar.getFormEl().getContent().find('.scheduler_form'));
+<% end %>

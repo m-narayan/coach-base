@@ -1,0 +1,3 @@
+$("#modal-<%= params[:day] %> .modal-body").html("<%= escape_javascript render(:partial => "event_sidebar", :collection => @events) %>");
+
+SocialStream.Event.index();
