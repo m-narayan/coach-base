@@ -1,0 +1,64 @@
+<section class="comunication-info">
+  <header>
+    <%= render partial: 'edit_icon' %>
+    <h4>
+      <%= t('profile.contact') %>
+    </h4>
+  </header>
+  <div class="briefing">
+    <% if @profile.contact_present? %>
+      <% if @profile.phone? %>
+        <h5>
+          <%= t('profile.phone') %>
+        </h5>
+        <p>
+        <%= h @profile.phone %>
+        </p>
+      <% end %>
+
+      <% if @profile.mobile? %>
+        <h5>
+          <%= t('profile.mobile') %>
+        </h5>
+        <p>
+        <%= h @profile.mobile %>
+        </p>
+      <% end %>
+
+      <% if @profile.fax? %>
+        <h5>
+          <%= t('profile.fax') %>
+        </h5>
+        <p>
+        <%= h @profile.fax %>
+        </p>
+      <% end %>
+
+      <% if @profile.address? %>
+        <h5>
+          <%= t('profile.address') %>
+        </h5>
+        <p>
+        <%= h @profile.address %>
+        </p>
+      <% end %>
+
+      <% if @profile.website? %>
+        <h5>
+          <%= t('profile.website') %>
+        </h5>
+        <p>
+        <%= link_to @profile.website, @profile.website %>
+        </p>
+      <% end %>
+    <% else %>
+      <%= render partial: 'empty' %>
+    <% end %>
+  </div>
+ 
+  <% if can? :update, @profile %>
+  <div class="update">
+    <%= render partial: 'comunication-info_edit' %>
+  </div>
+  <% end %>
+</section>

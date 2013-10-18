@@ -12,3 +12,5 @@
  *= require social_stream
  *= require_tree .
  */
+.logo-header-out .cube{display:none;}
+.logo-header-out .shadow{display:none;}
