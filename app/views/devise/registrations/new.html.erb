@@ -27,6 +27,8 @@
       
       <%= f.password_field :password_confirmation, :class =>"form_tag"%>
 
+      <%= f.hidden_field :user_type,:value => params[:user_type] %>
+
       <%= f.submit t('action.accept').capitalize,:class=>"btn pull-right"%>
 
     </div>

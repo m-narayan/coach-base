@@ -30,8 +30,10 @@
     </section>
   <% end %>
 
-  <%= render :partial => 'scheduler/form',
-             :locals  => { :f => f } %>
+    <section>
+      <%= f.label :price %>
+      <%= f.text_field :price%>
+    </section>
 
   <%= render partial: 'objects/form_privacy',
              locals: { f: f } %>

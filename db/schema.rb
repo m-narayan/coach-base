@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017093040) do
+ActiveRecord::Schema.define(:version => 20131022124245) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(:version => 20131017093040) do
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
     t.string   "notification_settings"
+    t.string   "user_type"
   end
 
   add_index "actors", ["activity_object_id"], :name => "index_actors_on_activity_object_id"
@@ -260,6 +261,7 @@ ActiveRecord::Schema.define(:version => 20131017093040) do
     t.integer  "interval"
     t.integer  "days",               :default => 0
     t.integer  "interval_flag",      :default => 0
+    t.decimal  "price"
   end
 
   add_index "events", ["room_id"], :name => "index_events_on_room_id"
