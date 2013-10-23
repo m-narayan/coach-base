@@ -43,6 +43,7 @@ class EventsController < ApplicationController
       :week_day_order, :week_day, :interval,
       :room_id,
       :price
+
     ]
   end
 

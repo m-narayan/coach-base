@@ -4,6 +4,7 @@ class FrontpageController < ApplicationController
   before_filter :redirect_user_to_home, :only => :index
 
   def index
+    @events = Event.all
     respond_to do |format|
       format.html # index.html.erb
     end

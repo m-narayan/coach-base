@@ -5,8 +5,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :room
 
-  validates_presence_of :title #,:price
- # validates_numericality_of :price
+  validates_presence_of :title,:price
+  validates_numericality_of :price
 
   validate :room_belongs_to_receiver
 
@@ -28,28 +28,27 @@ class Event < ActiveRecord::Base
                    end_at.advance(:days => end_diff)
       end
     else
-      build_json
+      build_json 
     end
   end
 
   def poster
     @poster ||=
-        main_document ||
-            build_poster
+      main_document ||
+      build_poster
   end
 
   protected
 
   def build_json(start_time = start_at, end_time = end_at)
-    {
+      {
         :id => id,
         :title => title,
         :start => start_time,
         :end => end_time,
         :allDay => all_day?,
-        :roomId => room_id,
-        :price => price
-    }
+        :roomId => room_id
+      }
 
   end
 
