@@ -40,3 +40,7 @@ gem 'jquery-rails'
 gem 'social_stream'
 
 gem 'bigbluebutton_rails'
+
+gem 'pg'
+
+gem 'client_side_validations'

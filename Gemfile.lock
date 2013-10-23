@@ -54,6 +54,7 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    client_side_validations (3.2.6)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.2)
@@ -165,6 +166,7 @@ GEM
       mime-types
     paperclip-ffmpeg (0.11.0)
       paperclip (>= 2.5.2)
+    pg (0.17.0)
     polyglot (0.3.3)
     proudhon (0.3.7)
       json
@@ -337,8 +339,10 @@ PLATFORMS
 
 DEPENDENCIES
   bigbluebutton_rails
+  client_side_validations
   coffee-rails (~> 3.2.1)
   jquery-rails
+  pg
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)
   social_stream

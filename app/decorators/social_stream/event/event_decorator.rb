@@ -1,3 +1,4 @@
 #Event.class_eval do
-#  attr_accessible :price
+#  validates :price, presence: true
+#  validates :price, :numericality => {:only_integer => true}
 #end
