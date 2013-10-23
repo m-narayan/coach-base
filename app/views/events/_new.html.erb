@@ -17,19 +17,12 @@
   <% end %>
 <section>
   <%= f.label :title %>
-  <%= f.text_field :title,:require=> true %>
+  <%= f.text_field :title %>
 </section>
 <section>
   <%= f.label :description %>
   <%= f.text_area :description %>
 </section>
-  <% if f.object.owner.rooms.any? %>
-    <section>
-    <%= f.label :room %>
-    <%= f.select :room_id, f.object.owner.rooms.map{ |r| [r.name, r.id] }, { include_blank: true } %>
-    </section>
-  <% end %>
-
     <section>
       <%= f.label :price %>
       <%= f.text_field :price%>
@@ -40,3 +33,9 @@
   
   <%= f.submit nil %>
 <% end %>
+
+<script type="text/javascript">
+    $('#calendar_form').on('shown', function () {
+        $(ClientSideValidations.selectors.forms).validate();
+    });
+</script>
