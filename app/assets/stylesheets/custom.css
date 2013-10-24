@@ -9,3 +9,87 @@
     line-height: 1;
     width: 100%;
 }
+
+.tile_list_tile {
+    height: 175px;
+    min-width: 310px;
+    float:left;
+    position: relative;
+    margin:25px;
+}
+.tile_mid {
+    margin-right: 10px;
+}
+.tile_info {
+    width: 97%;
+    background-color: #333;
+    background-color: rgba(51,51,51,0.5);
+    bottom: 0;
+    overflow: hidden;
+    position: absolute;
+    color: #fff;
+}
+.tile_title {
+    font-size: 110%;
+    font-weight: lighter;
+    padding: 13px 0 0 8px;
+    width: 225px;
+}
+.left {
+    float: left;
+}
+.tile_instructors, .tile_subtitle {
+    clear: both;
+    font-size: 90%;
+    padding: 3px 0 5px 8px;
+    min-height: 16px;
+    width: 225px;
+}
+.tile_action {
+    display: block;
+    width: 135px;
+    padding: 5px 10px;
+    margin: 0 auto;
+    height: 15px;
+    left: 77.5px;
+}
+.button_green, .button_green_small {
+    background: #aed104;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.2);
+    color: #FFF;
+    display: block;
+    border-radius: 3px 3px 3px 3px;
+}
+.tile_action p {
+    margin: 0;
+    padding: 0;
+    font-size: 110%;
+    text-transform: capitalize;
+}
+
+.clear {
+    clear: both;
+}
+.tile_ttl {
+    top: 13px;
+    color: #AED104;
+    text-align: right;
+    font-size: 90%;
+    position: absolute;
+}
+.tile_ttl, .tile_on_sale {
+    color: #AED104;
+    right: 10px;
+    width: 65px;
+    text-align: right;
+
+}
+.tile_action span.tile_action_icon {
+    width: 14px;
+    height: 14px;
+    display: block;
+    position: relative;
+    right: 5px;
+    float: right;
+    top: 0px;
+}
