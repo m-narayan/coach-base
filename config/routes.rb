@@ -76,4 +76,5 @@ CoachBase::Application.routes.draw do
   # :rooms => 'custom_rooms',
   # :recordings => 'custom_recordings'
   # }
+  match 'course_details',:to=>'frontpage#course_details'
 end

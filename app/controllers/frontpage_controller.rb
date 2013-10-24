@@ -10,11 +10,17 @@ class FrontpageController < ApplicationController
     end
   end
 
+  def course_details
+    @event=Event.find(params[:id])
+  end
+
   private
 
   def redirect_user_to_home
     redirect_to(home_path) if user_signed_in?
   end
+
+
 
 end
 
