@@ -93,3 +93,8 @@
     float: right;
     top: 0px;
 }
+.event_price{color: #4F4D4B;
+    font-size: 2.8em;
+    font-weight: lighter;
+    line-height: 1em;}
+p{font-size: 14px;}

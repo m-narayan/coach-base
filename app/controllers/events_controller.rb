@@ -31,6 +31,12 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    event = Event.find(params[:id])
+    event.destroy
+    redirect_to my_courses_path
+  end
+
   private
 
   def allowed_params

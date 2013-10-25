@@ -14,6 +14,10 @@ class FrontpageController < ApplicationController
     @event=Event.find(params[:id])
   end
 
+  def my_courses
+    @events = current_user.events
+  end
+
   private
 
   def redirect_user_to_home
