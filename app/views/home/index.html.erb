@@ -9,9 +9,9 @@
               <div id="tile_nid_4107" class="tile tile_mid tile_even">
                 <a href="">
                   <% if event.poster.file_file_name.nil? %>
-                      <%= image_tag("plain.jpg", :style=>"width:310px;height:175px;")%>
+                      <%=link_to image_tag("plain.jpg", :style=>"width:310px;height:175px;") ,course_details_path(id:event)%>
                   <%else%>
-                      <%= image_tag(event.poster.file) %>
+                      <%=link_to image_tag(event.poster.file, :style=>"width:310px;height:175px;") ,course_details_path(id:event) %>
                   <%end%>
                   <div class="tile_info" style="padding-bottom: 0px;">
                     <div class="tile_title left">
