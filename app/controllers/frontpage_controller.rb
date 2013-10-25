@@ -12,6 +12,11 @@ class FrontpageController < ApplicationController
 
   def course_details
     @event=Event.find(params[:id])
+    @grouped_payments = [
+        [Payment.new,                 Payment.recurring.build              ],
+        [Payment.digital.build,       Payment.digital.recurring.build      ],
+        [Payment.digital.popup.build, Payment.digital.popup.recurring.build]
+    ]
   end
 
   def my_courses

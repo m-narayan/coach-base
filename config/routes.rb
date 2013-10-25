@@ -78,4 +78,12 @@ CoachBase::Application.routes.draw do
   # }
   match 'course_details',:to => 'frontpage#course_details'
   match 'my_courses',:to => 'frontpage#my_courses'
+
+  resources :payments, only: [:show, :create, :destroy] do
+    collection do
+      get :success
+      get :cancel
+      post :notify
+    end
+  end
 end

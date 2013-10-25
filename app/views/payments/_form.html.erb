@@ -1,0 +1,7 @@
+<%= form_for payment do |f| %>
+  <%= f.hidden_field :amount %>
+  <%= f.hidden_field :digital ,:value=> true%>
+  <%= f.hidden_field :recurring,:value=> false %>
+  <%= f.hidden_field :popup,:value=> true %>
+  <%= f.submit 'Pay' %>
+<% end %>
