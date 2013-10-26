@@ -27,7 +27,9 @@ class PaymentsController < ApplicationController
     handle_callback do |payment|
       payment.complete!(params[:PayerID])
       flash[:notice] = 'Payment Transaction Completed'
-      payment_url(payment.identifier)
+      #payment_url(payment.identifier)
+      redirect_to enrolled_courses_path
+      return
     end
   end
 
