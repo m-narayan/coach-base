@@ -5,7 +5,8 @@
       <h3> <%= @event.activity_object.title%></h3>
        <p> <%= @event.activity_object.description%></p>
       <p>Instructor: <%=link_to @event.author.name, user_path(@event.author) %></p>
-      <p class="event_price">$<%= @event.price.round %> <%= link_to "Enroll", '#' , :class=>"btn btn-primary"%></p>
+      <p class="event_price">$<%= @event.price.round %> <%= link_to "Enroll", payment_confirm_path(id:@event.id) , :class=>"btn btn-primary"%></p>
+
     </div>
     <div class="span7">
       <% if @event.poster.file_file_name.nil? %>
@@ -14,25 +15,8 @@
           <%=image_tag(@event.poster.file, :style=>"width:640px;height:360px;") %>
       <%end%>
     </div>
-    <section>
-       <% @grouped_payments.each do |payments| %>
-          <% payment = payments.first %>
-          <%= content_tag :section, :class => payment.ux_type do %>
-              <h2>
-                <%=t "payments.#{payment.goods_type}.title" %>
-                <% if payment.popup? %>(Popup)<% end %>
-              </h2>
-              <p><%=t "payments.#{payment.goods_type}.description" %></p>
-              <% if payment.popup? %>
-                  <p><%=t "payments.popup.description" %></p>
-              <% end %>
-              <div class="boxes">
-                <%= render payments %>
-              </div>
-          <% end %>
-      <% end %>
-    </section>
-
-
   </div>
 </div>
+<br>
+<section>
+</section>

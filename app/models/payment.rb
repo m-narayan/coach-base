@@ -1,10 +1,13 @@
 class Payment < ActiveRecord::Base
-  validates :token, uniqueness: true
+  #attr_accessible :event_id,:user_id
+  #validates :token, uniqueness: true
   validates :amount, presence: true
-  validates :identifier, uniqueness: true
+  validates :identifier, uniqueness: true, :allow_blank => true, :allow_nil => true
   scope :recurring, where(recurring: true)
   scope :digital,   where(digital: true)
   scope :popup,     where(popup: true)
+  cattr_accessor :title ,:description
+
 
   def goods_type
     digital? ? :digital : :real
@@ -75,7 +78,7 @@ class Payment < ActiveRecord::Base
 
   DESCRIPTION = {
       item: 'PayPal Express Sample Item',
-      instant: 'PayPal Express Sample Instant Payment',
+      instant: 'PayPal Express Instant Payment',
       recurring: 'PayPal Express Sample Recurring Payment'
   }
 
@@ -87,14 +90,14 @@ class Payment < ActiveRecord::Base
                            }
                          else
                            item = {
-                               name: DESCRIPTION[:item],
-                               description: DESCRIPTION[:item],
+                               name: title,
+                               description: description,
                                amount: self.amount
                            }
                            item[:category] = :Digital if self.digital?
                            {
                                amount: self.amount,
-                               description: DESCRIPTION[:instant],
+                               description: description,
                                items: [item]
                            }
                          end

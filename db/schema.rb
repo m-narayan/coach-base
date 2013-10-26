@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131025115731) do
+ActiveRecord::Schema.define(:version => 20131026084047) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -336,6 +336,8 @@ ActiveRecord::Schema.define(:version => 20131025115731) do
     t.boolean  "canceled",   :default => false
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
+    t.integer  "event_id"
+    t.integer  "user_id"
   end
 
   create_table "permissions", :force => true do |t|

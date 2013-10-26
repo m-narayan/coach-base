@@ -9,7 +9,7 @@ class PaymentsController < ApplicationController
     payment = Payment.create! params[:payment]
     payment.setup!(
         success_payments_url,
-        cancel_payments_url
+        cancel_payments_url,
     )
     if payment.popup?
       redirect_to payment.popup_uri
