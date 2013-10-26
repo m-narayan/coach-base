@@ -38,5 +38,5 @@ CoachBase::Application.configure do
   #Since Social Stream depends on Devise, make sure you follow its setup instructions. Specifically, 
   # make sure you set the default URL options for your environments at config/environments/*.rb
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
+  Paypal.sandbox!
 end

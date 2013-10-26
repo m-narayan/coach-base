@@ -5,7 +5,8 @@
       <h3> <%= @event.activity_object.title%></h3>
        <p> <%= @event.activity_object.description%></p>
       <p>Instructor: <%=link_to @event.author.name, user_path(@event.author) %></p>
-      <p class="event_price">$<%= @event.price.round %> <%= link_to "Enroll", '#' , :class=>"btn btn-primary"%></p>
+      <p class="event_price">$<%= @event.price.round %> <%= link_to "Enroll", payment_confirm_path(id:@event.id) , :class=>"btn btn-primary"%></p>
+
     </div>
     <div class="span7">
       <% if @event.poster.file_file_name.nil? %>
@@ -16,3 +17,6 @@
     </div>
   </div>
 </div>
+<br>
+<section>
+</section>

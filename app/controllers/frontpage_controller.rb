@@ -1,7 +1,8 @@
 class FrontpageController < ApplicationController
   include SocialStream::Devise::Controllers::UserSignIn
-
+  include SessionsHelper
   before_filter :redirect_user_to_home, :only => :index
+  before_filter :signed_in_user, :only => :payment_confirm
 
   def index
     @events = Event.all
@@ -14,8 +15,18 @@ class FrontpageController < ApplicationController
     @event=Event.find(params[:id])
   end
 
+  def payment_confirm
+    @event=Event.find(params[:id])
+    @grouped_payments = [[Payment.digital.build]]
+  end
+
+
   def my_courses
     @events = current_user.events
+  end
+
+  def enrolled_courses
+    @events = Event.where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
   end
 
   private
@@ -23,7 +34,6 @@ class FrontpageController < ApplicationController
   def redirect_user_to_home
     redirect_to(home_path) if user_signed_in?
   end
-
 
 
 end

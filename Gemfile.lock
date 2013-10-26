@@ -166,6 +166,11 @@ GEM
       mime-types
     paperclip-ffmpeg (0.11.0)
       paperclip (>= 2.5.2)
+    paypal-express (0.5.3)
+      activesupport (>= 2.3)
+      attr_required (>= 0.0.5)
+      i18n
+      restclient_with_cert
     pg (0.17.0)
     polyglot (0.3.3)
     proudhon (0.3.7)
@@ -227,6 +232,8 @@ GEM
       vegas (~> 0.1.2)
     rest-client (1.6.7)
       mime-types (>= 1.16)
+    restclient_with_cert (0.0.8)
+      rest-client (>= 1.6)
     riddle (1.5.8)
     rmagick (2.13.2)
     ruby-imagespec (0.2.0)
@@ -342,6 +349,7 @@ DEPENDENCIES
   client_side_validations
   coffee-rails (~> 3.2.1)
   jquery-rails
+  paypal-express
   pg
   rails (= 3.2.14)
   sass-rails (~> 3.2.3)

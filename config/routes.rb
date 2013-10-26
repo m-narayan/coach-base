@@ -77,5 +77,15 @@ CoachBase::Application.routes.draw do
   # :recordings => 'custom_recordings'
   # }
   match 'course_details',:to => 'frontpage#course_details'
+  match 'payment_confirm',:to => 'frontpage#payment_confirm'
   match 'my_courses',:to => 'frontpage#my_courses'
+  match 'enrolled_courses',:to => 'frontpage#enrolled_courses'
+
+  resources :payments, only: [:show, :create, :destroy] do
+    collection do
+      get :success
+      get :cancel
+      post :notify
+    end
+  end
 end

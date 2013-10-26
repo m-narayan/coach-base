@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131022124245) do
+ActiveRecord::Schema.define(:version => 20131026084047) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -323,6 +323,22 @@ ActiveRecord::Schema.define(:version => 20131022124245) do
   add_index "oauth2_tokens", ["site_id"], :name => "index_oauth2_tokens_on_site_id"
   add_index "oauth2_tokens", ["token"], :name => "index_oauth2_tokens_on_token"
   add_index "oauth2_tokens", ["user_id"], :name => "index_oauth2_tokens_on_user_id"
+
+  create_table "payments", :force => true do |t|
+    t.integer  "amount",     :default => 1
+    t.string   "token"
+    t.string   "identifier"
+    t.string   "payer_id"
+    t.boolean  "recurring",  :default => false
+    t.boolean  "digital",    :default => false
+    t.boolean  "popup",      :default => false
+    t.boolean  "completed",  :default => false
+    t.boolean  "canceled",   :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "event_id"
+    t.integer  "user_id"
+  end
 
   create_table "permissions", :force => true do |t|
     t.string   "action"
