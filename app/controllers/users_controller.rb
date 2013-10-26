@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @events = current_user.events
+  end
   # Supported through devise
   def new; end; def create; end
   # Not supported yet

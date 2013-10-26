@@ -1,10 +1,16 @@
+<div id="toolbar" class="toolbar-profile">
 <div class="logo_home">
   <%= link_to (image_tag(current_subject.logo.url(:medium) , :size => "small", :alt => current_subject.name )), current_subject  %>
 </div>
 <h5>
   <%= link_to truncate_name(current_subject.name, :length => 80), current_subject %>
 </h5>
-<%= link_to "My Courses" ,my_courses_path %> <br>
-<%= link_to "Enrolled Courses" ,enrolled_courses_path %> <br>
-<%= link_to "All Courses" ,root_path %>
+<nav class="toolbar_menu">
+  <ul class="nav">
+    <li><%= link_to "All Courses" ,root_path %>    </li>
+    <li><%= link_to "My Courses" ,my_courses_path %> </li>
+    <li><%= link_to "Enrolled Courses" ,enrolled_courses_path %></li>
 
+  </ul>
+</nav>
+</div>
