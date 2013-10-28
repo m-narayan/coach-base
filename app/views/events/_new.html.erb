@@ -28,10 +28,10 @@
       <%= f.text_field :price%>
     </section>
 
-  <%#= render partial: 'objects/form_privacy',
-             locals: { f: f } %>
-  
-  <%= f.submit nil %>
+    <%= render :partial => 'scheduler/form',
+               :locals  => { :f => f } %>
+
+    <%= f.submit nil %>
 <% end %>
 
 <script type="text/javascript">
