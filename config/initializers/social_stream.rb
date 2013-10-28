@@ -50,7 +50,7 @@ SocialStream.setup do |config|
   # Activities objects managed by actors
   # Remember you must add an "activity_object_id" foreign key column to your migration!
   #
-  # config.objects += [ :foo, :bar ]
+  config.objects += [:course]
 
   # Activity objects included in the wall input form
   # You can write your own view in app/views/your_objects/_new_activity.html.erb
