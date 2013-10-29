@@ -15,14 +15,11 @@
       </ul>
     </div>
   <% end %>
-<section>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-</section>
-<section>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-</section>
+    <section>
+      <%= f.label :Course %>
+      <% courses_array = Course.all.map { |course| [course.title, course.id] } %>
+      <%= f.select(:course_id,options_for_select(courses_array))%>
+    </section>
 
     <%= render :partial => 'scheduler/form',
                :locals  => { :f => f } %>

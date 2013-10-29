@@ -3,7 +3,7 @@
 <% end %>
 
 <section id="events">
-  <%= render partial: 'toolbar/profile', locals: { subject: profile_or_current_subject } %>
+ <%= render partial: 'toolbar/subject', locals: { subject: profile_or_current_subject } %>
 
   <div id="calendar" class="table-striped" data-events_path="<%= polymorphic_path [profile_or_current_subject, Event.new] %>" data-date="<%= params[:date] %>" data-view="<%= params[:view] %>" <%= 'data-can-create="true"' if can?(:create, new_post(profile_or_current_subject)) %>></div>
 

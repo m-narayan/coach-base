@@ -23,10 +23,10 @@
     </section>
     <section>
       <%= f.label :price %>
-      <%= f.text_field :price%>
+      <%= f.text_field :price, :style=>"width:100px !important;"%>
     </section>
 
-    <%= f.submit nil %>
+    <%= f.submit nil , :class=> "btn-primary"%>
 <% end %>
 </div>
   <%= render partial: 'sidebar/show' %>

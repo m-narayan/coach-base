@@ -7,7 +7,7 @@
 
   <div class="data">
     <div class="name">
-      <%= link_to truncate(event.title, :length => 15), event %>
+      <%= link_to truncate(event.course.activity_object.title, :length => 15), event %>
     </div>
 
     <div class="date">

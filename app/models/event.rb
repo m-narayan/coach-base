@@ -4,11 +4,8 @@ class Event < ActiveRecord::Base
   scheduler
 
   belongs_to :room
+  belongs_to  :course
 
-  belongs_to :course
-
-  validates_presence_of :title,:price
-  validates_numericality_of :price
 
   validate :room_belongs_to_receiver
 
