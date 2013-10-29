@@ -236,10 +236,14 @@ ActiveRecord::Schema.define(:version => 20131029115516) do
 
   create_table "courses", :force => true do |t|
     t.integer  "activity_object_id"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.decimal  "price"
     t.integer  "user_id"
+    t.string   "course_image_file_name"
+    t.string   "course_image_content_type"
+    t.integer  "course_image_file_size"
+    t.datetime "course_image_updated_at"
   end
 
   create_table "documents", :force => true do |t|

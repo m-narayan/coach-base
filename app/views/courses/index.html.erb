@@ -7,25 +7,27 @@
     <tr>
       <th>Course</th>
       <th>Action</th>
-
+         <th>Image</th>
     </tr>
     </thead>
     <tbody>
     <% @courses.each do |course| %>
     <tr>
+      <td>
 
+        <%= image_tag course.course_image.url unless course.course_image.nil? %>   </td>
       <td><%= course.activity_object.title %></td>
                                   <td>   <%= link_to edit_course_path(course) do %><i class="icon-pencil"></i><% end %>
          <%= link_to course, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="icon-remove"></i>  <% end %>
       </td>
-    </tr>
+         </tr>
         <%end%>
     </tbody>
   </table>
 </div>
-<div class="">
+<div>
   <ul class="pagination pagination-large">
-  <%= will_paginate @courses, :container=>true %>
+  <%= will_paginate @courses, :container=>false %>
  </ul>
 
 </div>

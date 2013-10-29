@@ -7,7 +7,6 @@ class CoursesController < ApplicationController
   # GET /courses.json
   def index
     @courses =current_user.courses.paginate(:per_page => 5, :page => params[:page])
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
