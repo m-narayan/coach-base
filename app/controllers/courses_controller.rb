@@ -5,10 +5,12 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all
+    @courses = Course.all.paginate(:per_page => 5, :page => params[:page])
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @courses }
+
     end
   end
 
@@ -44,7 +46,7 @@ class CoursesController < ApplicationController
     @course = Course.new(params[:course])
     respond_to do |format|
       if @course.save
-        format.html { redirect_to @course, notice: 'Course was successfully created.' }
+        format.html { redirect_to courses_path, notice: 'Course was successfully created.' }
         format.json { render json: @course, status: :created, location: @course }
       else
         format.html { render action: "new" }
