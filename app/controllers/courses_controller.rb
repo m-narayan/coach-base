@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_filter :hack_auth , :only => [ :create,:update]
+  before_filter :check_coach , :only => [ :new,:create,:update,:destroy]
   include SocialStream::Controllers::Objects
 
   # GET /courses
@@ -95,5 +96,9 @@ class CoursesController < ApplicationController
     params["course"]["author_id"] = current_subject.actor_id
     params["course"]["user_author_id"] = current_subject.actor_id
     params[:course].permit!
+  end
+
+  def check_coach
+    redirect_to(root_path) unless current_user.user_type == "coach"
   end
 end

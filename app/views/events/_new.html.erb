@@ -20,6 +20,10 @@
       <% courses_array = Course.all.map { |course| [course.title, course.id] } %>
       <%= f.select(:course_id,options_for_select(courses_array))%>
     </section>
+<section>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+</section>
 
     <%= render :partial => 'scheduler/form',
                :locals  => { :f => f } %>
