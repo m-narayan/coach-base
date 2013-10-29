@@ -31,11 +31,13 @@
                   </div>
                 </a>
               </div>
+              <% if current_user.actor.user_type =="coach" %>
               <% if  can?(:destroy, event) %>
                   <%= link_to("Delete", event_path(event), :data => { :confirm => "Are you sure?" },
                               :method => :delete,
                               :class => 'btn btn-mini btn-danger',
                               :remote=> false) %>
+              <% end %>
               <% end %>
             </div>
 
@@ -45,7 +47,10 @@
     </div>
   </div   >
 
-  <%= render partial: 'sidebar/show' %>
+  <% if current_user.actor.user_type =="coach" %>
+      <%= render partial: 'sidebar/show' %>
+  <% end  %>
+
 
 
 </section>

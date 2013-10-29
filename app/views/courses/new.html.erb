@@ -29,5 +29,8 @@
     <%= f.submit nil , :class=> "btn-primary"%>
 <% end %>
 </div>
-  <%= render partial: 'sidebar/show' %>
+  <% if current_user.actor.user_type =="coach" %>
+      <%= render partial: 'sidebar/show' %>
+  <% end  %>
+
 </section>

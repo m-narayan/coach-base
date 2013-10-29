@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
   # GET /courses
   # GET /courses.json
   def index
-    @courses = Course.all.paginate(:per_page => 5, :page => params[:page])
+    @courses =current_user.courses.paginate(:per_page => 5, :page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -62,7 +62,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     respond_to do |format|
       if @course.update_attributes(params[:course])
-        format.html { redirect_to @course, notice: 'Course was successfully updated.' }
+        format.html { redirect_to courses_path, notice: 'Course was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -95,6 +95,7 @@ class CoursesController < ApplicationController
     params["course"]["owner_id"] = current_subject.actor_id
     params["course"]["author_id"] = current_subject.actor_id
     params["course"]["user_author_id"] = current_subject.actor_id
+    params["course"]["user_id"] = current_user.id
     params[:course].permit!
   end
 
