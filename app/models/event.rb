@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :room
 
+  belongs_to :course
+
   validates_presence_of :title,:price
   validates_numericality_of :price
 

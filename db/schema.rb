@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131028101625) do
+ActiveRecord::Schema.define(:version => 20131029051638) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -238,6 +238,7 @@ ActiveRecord::Schema.define(:version => 20131028101625) do
     t.integer  "activity_object_id"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.decimal  "price"
   end
 
   create_table "documents", :force => true do |t|
@@ -267,7 +268,7 @@ ActiveRecord::Schema.define(:version => 20131028101625) do
     t.integer  "interval"
     t.integer  "days",               :default => 0
     t.integer  "interval_flag",      :default => 0
-    t.decimal  "price"
+    t.integer  "course_id"
   end
 
   add_index "events", ["room_id"], :name => "index_events_on_room_id"
