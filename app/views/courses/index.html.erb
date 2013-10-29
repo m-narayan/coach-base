@@ -1,25 +1,35 @@
-<h1>Listing courses</h1>
+<%= render partial: 'toolbar/subject' %>
+<h1>Manage courses</h1>
+<div class="span8">
+<div class="well">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Course</th>
+      <th>Action</th>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Activity object</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    </tr>
+    </thead>
+    <tbody>
+    <% @courses.each do |course| %>
+    <tr>
 
-<% @courses.each do |course| %>
-  <tr>
-    <td><%= course.id %></td>
-    <td><%= course.activity_object_id %></td>
-    <td><%= link_to 'Show', course %></td>
-    <td><%= link_to 'Edit', edit_course_path(course) %></td>
-    <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+      <td><%= course.activity_object.title %></td>
+                                  <td>   <%= link_to edit_course_path(course) do %><i class="icon-pencil"></i><% end %>
+         <%= link_to course, method: :delete, data: { confirm: 'Are you sure?' } do %><i class="icon-remove"></i>  <% end %>
+      </td>
+    </tr>
+        <%end%>
+    </tbody>
+  </table>
+</div>
+<div class="">
+  <ul class="pagination pagination-large">
+  <%= will_paginate @courses, :container=>true %>
+ </ul>
 
-<br />
+</div>
 
-<%= link_to 'New Course', new_course_path %>
+
+
+</div>
