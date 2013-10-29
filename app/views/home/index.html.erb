@@ -9,10 +9,10 @@
             <div class="tile_list_tile tile_list_tile_4">
               <div id="tile_nid_4107" class="tile tile_mid tile_even">
                 <a href="">
-                  <% if event.poster.file_file_name.nil? %>
+                  <% if event.course.course_image.nil? %>
                       <%=link_to image_tag("plain.jpg", :style=>"width:310px;height:175px;") ,course_details_path(id:event)%>
                   <%else%>
-                      <%=link_to image_tag(event.poster.file, :style=>"width:310px;height:175px;") ,course_details_path(id:event) %>
+                      <%=link_to image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;") ,course_details_path(id:event) %>
                   <%end%>
                   <%= link_to course_details_path(id:event) do %>     <div class="tile_info" style="padding-bottom: 0px;">
                     <div class="tile_title left">
