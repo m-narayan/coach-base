@@ -9,7 +9,6 @@
       <%= image_tag(@event.author.logo.url, :style=>"width:50px;height:50px;")%>
       <p><b>By</b> <%=link_to @event.author.name, user_path(@event.author) %></p>
 
-      <p>Instructor: <%=link_to @event.author.name, user_path(@event.author) %></p>
 
       <p class="event_price">
 
@@ -19,10 +18,10 @@
        <%= number_to_currency(@event.course.price, :precision => 2,:delimiter => ',') %>
       </p>
 
-      <p><b>Start Date:</b> <%= @event.start_at %></p>
+      <p><b>Start Date: <%= @event.start_at.strftime("%A, %B %d, %Y at %l%p %Z") %></b></p>
     </div>
     <div class="span7">
-      <%=image_tag(@event.course.course_image.url, :style=>"width:640px;height:360px;") %>
+      <%=image_tag(@event.course.course_image.url, :style=>"width:150px;height:126px;") %>
     </div>
   </div>
 </div>
