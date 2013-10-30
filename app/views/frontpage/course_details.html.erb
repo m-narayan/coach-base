@@ -2,29 +2,24 @@
 <div class="container">
   <div class="row">
     <div class="span4" style="text-align: right;">
-      <h3> <%= @event.course.activity_object.title%></h3>
-       <p> <%= @event.course.activity_object.description%></p>
-
-
-      <%= image_tag(@event.author.logo.url, :style=>"width:50px;height:50px;")%>
-      <p><b>By</b> <%=link_to @event.author.name, user_path(@event.author) %></p>
-
-
+      <h3> <%= @course.activity_object.title%></h3>
+       <p> <%= @course.activity_object.description%></p>
+      <%= image_tag(@course.author.logo.url, :style=>"width:50px;height:50px;")%>
+      <p><b>By</b> <%=link_to @course.author.name, user_path(@course.author) %></p>
       <p class="event_price">
-
-        <% if current_user.actor.user_type =="student" %>
-            <%= link_to "Enroll", payment_confirm_path(id:@event.id) , :class=>"btn btn-primary"%>
-        <% end  %>
-       <%= number_to_currency(@event.course.price, :precision => 2,:delimiter => ',') %>
-      </p>
-
-      <p><b>Start Date: <%= @event.start_at.strftime("%A, %B %d, %Y at %l%p %Z") %></b></p>
+        <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %>
     </div>
     <div class="span7">
-      <%=image_tag(@event.course.course_image.url, :style=>"width:150px;height:126px;") %>
+      <%=image_tag(@course.course_image.url, :style=>"width:640px;height:360px;") %>
     </div>
   </div>
+  <% @course.events.each do |event|  %>
+      <%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %>
+      <% if current_user!=nil and current_user.actor.user_type =="student" %>
+          <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
+      <% end  %>
+
+      <br>
+  <% end  %>
 </div>
-<br>
-<section>
-</section>
+

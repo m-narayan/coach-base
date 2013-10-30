@@ -12,7 +12,7 @@ class FrontpageController < ApplicationController
   end
 
   def course_details
-    @event=Event.find(params[:id])
+    @course=Course.find(params[:id])
   end
 
   def payment_confirm
