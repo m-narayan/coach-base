@@ -3,23 +3,20 @@
 
   <div class="timeline">
     <div class="span8">
-      <h3>All Events</h3>
-      <% @events.each do |event|  %>
+      <h3>All Courses</h3>
+      <% @courses.each do |course|  %>
           <div class="span4" style="width: 355px;">
             <div class="tile_list_tile tile_list_tile_4">
               <div id="tile_nid_4107" class="tile tile_mid tile_even">
                 <a href="">
-                  <%=link_to image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;") ,course_details_path(id:event) %>
-                  <%= link_to course_details_path(id:event) do %>     <div class="tile_info" style="padding-bottom: 0px;">
+                  <%=link_to image_tag(course.course_image.url, :style=>"width:310px;height:175px;") ,course_details_path(id:course) %>
+                  <%= link_to course_details_path(id:course) do %>     <div class="tile_info" style="padding-bottom: 0px;">
                     <div class="tile_title left">
-                      <%= event.course.activity_object.title%>	</div>
+                      <%= course.activity_object.title%>	</div>
                     <div class="tile_instructors left">
-                      <%= event.author.name %></div>
+                      <%= course.user.name %></div>
                     <div class="clear"></div>
-                    <div class="button_green_small tile_action">
-                      <p class="left"><span>live</span> <%= event.start_date.strftime("%b %d") %></p>
-                      <span class=" icon-arrow-right icon-white tile_action_icon"></span>
-                    </div>                <%end%>
+                  <%end%>
                     <!--<div class="tile_ttl">-->
                     <!--<div class="ttl_live_in">LIVE in</div><div class="ttl_live_duration">&nbsp;5 days</div>			</div>-->
                     <div class="tile_sell_price hide"><%=%></div>
