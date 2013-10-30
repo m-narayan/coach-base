@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
   belongs_to :room
   belongs_to  :course
 
+  validates_presence_of :course_id
 
   validate :room_belongs_to_receiver
 
