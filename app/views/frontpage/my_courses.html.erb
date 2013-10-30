@@ -9,8 +9,8 @@
           <div class="span4" style="width: 355px;">
             <div class="tile_list_tile tile_list_tile_4">
               <div id="tile_nid_4107" class="tile tile_mid tile_even">
-                <a href="">
-                  <%=link_to image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;") ,course_details_path(id:event) %>                  <%= link_to course_details_path(id:event) do %>       <div class="tile_info" style="padding-bottom: 0px;">
+                  <%= image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;")  %>
+                     <div class="tile_info" style="padding-bottom: 0px;">
                     <div class="tile_title left">
                       <%= event.activity_object.title%>	</div>
                     <div class="tile_instructors left">
@@ -19,10 +19,9 @@
                     <div class="button_green_small tile_action">
                       <p class="left"> <%= event.start_date.strftime("%b %d") %></p>
                     </div>
-                  <%end%>
+
                   <div class="tile_sell_price hide"><%= event.course.price %></div>
                   </div>
-                </a>
               </div>
               <% if  can?(:destroy, event) %>
                   <%= link_to("Delete", event_path(event), :data => { :confirm => "Are you sure?" },
