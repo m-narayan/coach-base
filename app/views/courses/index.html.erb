@@ -1,7 +1,9 @@
+<section id="home">
+
 <%= render partial: 'toolbar/subject' %>
-<h1>Manage courses</h1>
+
 <div class="span8">
-<div class="well">
+  <h3>Manage courses</h3>
   <table class="table">
     <thead>
     <tr>
@@ -24,14 +26,15 @@
         <%end%>
     </tbody>
   </table>
-</div>
-<div>
+
   <ul class="pagination pagination-large">
   <%= will_paginate @courses, :container=>false %>
  </ul>
 
 </div>
 
+  <% if current_user.actor.user_type =="coach" %>
+      <%= render partial: 'sidebar/show' %>
+  <% end  %>
 
-
-</div>
+  </section>

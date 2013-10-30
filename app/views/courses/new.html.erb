@@ -1,6 +1,7 @@
 <section id="home">
   <%= render partial: 'toolbar/home' %>
 <div class="span8">
+<h3>Add Course</h3>
 <%= form_for @course ,:validate => true do |f| %>
     <% if f.object.errors.any? %>
         <div id="error_explanation">
