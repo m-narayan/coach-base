@@ -15,11 +15,8 @@
 
     </div>
     <div class="span7">
-      <% if @event.poster.file_file_name.nil? %>
-          <%= image_tag("plain.jpg", :style=>"width:640px;height:360px;")%>
-      <%else%>
-          <%=image_tag(@event.poster.file, :style=>"width:640px;height:360px;") %>
-      <%end%>
+      <%=image_tag(@event.course.course_image.url, :style=>"width:640px;height:360px;") %>
+
     </div>
   </div>
 </div>
