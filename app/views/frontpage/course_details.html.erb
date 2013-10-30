@@ -4,17 +4,16 @@
     <div class="span4" style="text-align: right;">
       <h3> <%= @event.course.activity_object.title%></h3>
        <p> <%= @event.course.activity_object.description%></p>
-      <p>Instructor: <%=link_to @event.author.name, user_path(@event.author) %></p>
+
+      <%= image_tag(@event.author.logo.url, :style=>"width:50px;height:50px;")%>
+      <p><b>By</b> <%=link_to @event.author.name, user_path(@event.author) %></p>
       <p class="event_price">
         $<%= @event.course.price %> <%= link_to "Enroll", payment_confirm_path(id:@event.id) , :class=>"btn btn-primary"%>
       </p>
+      <p><b>Start Date:</b> <%= @event.start_at %></p>
     </div>
     <div class="span7">
-      <% if @event.poster.file_file_name.nil? %>
-          <%= image_tag("plain.jpg", :style=>"width:640px;height:360px;")%>
-      <%else%>
-          <%=image_tag(@event.poster.file, :style=>"width:640px;height:360px;") %>
-      <%end%>
+                  <%=image_tag(@event.course.course_image.url, :style=>"width:150px;height:126px;") %>
     </div>
   </div>
 </div>
