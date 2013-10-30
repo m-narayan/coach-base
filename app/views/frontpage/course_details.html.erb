@@ -13,13 +13,17 @@
       <%=image_tag(@course.course_image.url, :style=>"width:640px;height:360px;") %>
     </div>
   </div>
+  <table>
   <% @course.events.each do |event|  %>
-      <%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %>
+      <tr>
+      <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
+      <td>
       <% if current_user!=nil and current_user.actor.user_type =="student" %>
           <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
       <% end  %>
-
-      <br>
+      </td>
+      </tr>
   <% end  %>
+  </table>
 </div>
 
