@@ -12,10 +12,11 @@
       <p>Instructor: <%=link_to @event.author.name, user_path(@event.author) %></p>
 
       <p class="event_price">
-        $<%= @event.course.price %>
-        <% if current_user.actor.user_type =="student" %>
+
+              <% if current_user.actor.user_type =="student" %>
             <%= link_to "Enroll", payment_confirm_path(id:@event.id) , :class=>"btn btn-primary"%>
         <% end  %>
+       $<%= number_to_currency(@event.course.price, :precision => 2,:delimiter => ',') %> <%= link_to "Enroll", payment_confirm_path(id:@event.id) , :class=>"btn btn-primary"%>
       </p>
 
       <p><b>Start Date:</b> <%= @event.start_at %></p>
