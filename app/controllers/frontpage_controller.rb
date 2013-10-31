@@ -42,17 +42,12 @@ class FrontpageController < ApplicationController
 
   def enrolled_courses
     @events = Event.where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
-    if @events.event.start_at > Time.now
-
-    end
 
   end
 
   def completed_courses
     @events = Event.where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
-    if @events.event.start_at > Time.now
 
-    end
   end
 
   private
