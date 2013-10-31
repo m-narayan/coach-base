@@ -1,5 +1,5 @@
 
-<div class="container">
+ <div class="container">
   <div class="row">
     <div class="span4" style="text-align: right;">
       <h3> <%= @course.activity_object.title%></h3>
@@ -38,4 +38,21 @@
   </table>
 
 </div>
+
+<br> 
+
+
+ <div class="container">
+ <div class="span10 ">
+     <div class="username">
+        <%= @course.activity_object.title%><% image_tag"assets/images/download.jpg" %>
+       </div>
+       <div class="span4">
+       <%=image_tag(@course.course_image.url, :style=>"width:150px;height:126px;") %>
+       <div class="box" style="display: inline-block;" >
+       <%= image_tag(@course.author.logo.url, :style=>"width:50px;height:50px;")%>
+        <p style="display: inherit;"><b>By</b> <%=link_to @course.author.name, user_path(@course.author) %></p>
+
+    </div></div></div>
+ 
 

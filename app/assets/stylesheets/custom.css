@@ -98,3 +98,12 @@
     font-weight: lighter;
     line-height: 1em;}
 p{font-size: 14px;}
+
+
+.span10{
+padding: 0px 9px 25px;
+background-color: hsl(40, 10%, 94%);
+}
+.box{
+  border:1px solid hsl(30, 3%, 87%);
+}
