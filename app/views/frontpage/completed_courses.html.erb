@@ -1,0 +1,48 @@
+<section id="home">
+  <%= render partial: 'toolbar/home' %>
+
+  <div class="timeline">
+    <ul class="nav nav-tabs" id="myTab">
+      <li class="active"><a href="#">UpcomingCourses</a></li>
+      <li><a href="#">CompletedCourses</a></li>
+
+    </ul>
+
+    <script>
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        })
+    </script>
+
+    <h3>My Courses</h3>
+    <% @events.each do |event|  %>
+        <div class="span4" style="width: 355px;">
+          <div class="tile_list_tile tile_list_tile_4">
+            <div id="tile_nid_4107" class="tile tile_mid tile_even">
+              <%= image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;")  %>
+              <div class="tile_info" style="padding-bottom: 0px;">
+                <div class="tile_title left">
+                  <%= event.course.activity_object.title%>	</div>
+                <div class="tile_instructors left">
+                  <%= event.author.name %></div>
+                <div class="clear"></div>
+                <div class="tile_sell_price hide"><%= event.course.price %></div>
+                <div class="button_green_small tile_action">
+                  <p class="left"><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+    <% end  %>
+  </div>
+  </div   >
+
+  <% if current_user.actor.user_type =="coach" %>
+      <%= render partial: 'sidebar/show' %>
+  <% end  %>
+
+</section>
