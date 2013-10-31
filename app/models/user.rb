@@ -19,6 +19,8 @@ class User < ActiveRecord::Base
            :class_name => "ActivityObject",
            :foreign_key => :user_author_id
   has_many :courses
+  belongs_to :event
+  has_many :payments
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :name, :email, :password, :password_confirmation, :language, :remember_me, :profile_attributes

@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
 
   belongs_to :room
   belongs_to  :course
+  has_many  :payments
+
 
   validates_presence_of :course_id
 

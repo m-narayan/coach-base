@@ -7,7 +7,8 @@ class Payment < ActiveRecord::Base
   scope :digital,   where(digital: true)
   scope :popup,     where(popup: true)
   cattr_accessor :title ,:description
-
+  belongs_to :event
+  belongs_to  :user
 
   def goods_type
     digital? ? :digital : :real
