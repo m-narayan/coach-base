@@ -5,14 +5,14 @@ class FrontpageController < ApplicationController
   before_filter :signed_in_user, :only => :payment_confirm
 
   def index
-    @events = Event.all
+    @courses = Course.all
     respond_to do |format|
       format.html # index.html.erb
     end
   end
 
   def course_details
-    @event=Event.find(params[:id])
+    @course=Course.find(params[:id])
   end
 
   def payment_confirm

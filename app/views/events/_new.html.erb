@@ -1,20 +1,20 @@
 <%= form_for @event || Event.new(:owner_id => profile_or_current_subject.actor_id, :interval => 1), :remote => true ,:validate => true do |f| %>
-  <%= f.hidden_field :owner_id  %>
-  <%= f.hidden_field :start_at %>
-  <%= f.hidden_field :end_at %>
-  <%= f.hidden_field :all_day %>
+    <%= f.hidden_field :owner_id  %>
+    <%= f.hidden_field :start_at %>
+    <%= f.hidden_field :end_at %>
+    <%= f.hidden_field :all_day %>
 
-  <% if f.object.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(f.object.errors.count, "error") %> evitaron que se guardara esta actividad:</h2>
+    <% if f.object.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(f.object.errors.count, "error") %> evitaron que se guardara esta actividad:</h2>
 
-      <ul>
-      <% f.object.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% f.object.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <section>
       <%= f.label :Course %>
       <% courses_array = current_user.courses.map { |course| [course.title, course.id] } %>

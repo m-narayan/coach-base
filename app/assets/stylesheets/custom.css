@@ -99,21 +99,11 @@
     line-height: 1em;}
 p{font-size: 14px;}
 
-.container{
-background-color:whitesmoke;
-padding: 10px 0px 0px;
-border-radius: 7px;
-}
+
 .span10{
 padding: 0px 9px 25px;
 background-color: hsl(40, 10%, 94%);
 }
-.username{
-    font-size: 25px;
-font-weight: normal;
-max-width: 821px;
-}
-.username .facebooklike {
-padding: 5px 0px 0px 6px;
-margin: -20px 589px;
+.box{
+  border:1px solid hsl(30, 3%, 87%);
 }
