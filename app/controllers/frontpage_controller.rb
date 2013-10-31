@@ -44,6 +44,10 @@ class FrontpageController < ApplicationController
     @events = Event.where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
   end
 
+  def completed_courses
+    @events = Event.where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
+  end
+
   private
 
   def redirect_user_to_home

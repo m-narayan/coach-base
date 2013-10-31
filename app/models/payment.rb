@@ -6,6 +6,7 @@ class Payment < ActiveRecord::Base
   scope :recurring, where(recurring: true)
   scope :digital,   where(digital: true)
   scope :popup,     where(popup: true)
+  scope :completed,     where(completed: true)
   cattr_accessor :title ,:description
   belongs_to :event
   belongs_to  :user
