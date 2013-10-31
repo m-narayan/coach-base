@@ -1,54 +1,175 @@
 
- <div class="container">
-  <div class="row">
-    <div class="span4" style="text-align: right;">
-      <h3> <%= @course.activity_object.title%></h3>
-       <p> <%= @course.activity_object.description%></p>
-      <%= image_tag(@course.author.logo.url, :style=>"width:50px;height:50px;")%>
-      <p><b>By</b> <%=link_to @course.author.name, user_path(@course.author) %></p>
-      <p class="event_price">
-        <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %>
-    </div>
-    <div class="span7">
-      <%=image_tag(@course.course_image.url, :style=>"width:640px;height:360px;") %>
-    </div>
-  </div>
-  <table>
-  <% @enrolled_events.each do |event|  %>
-      <tr><td colspan="2"><%= event.title %></td></tr>
-      <tr>
-      <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
-      <td>
-      <% if current_user!=nil and current_user.actor.user_type =="student" %>
-          <%= link_to "Take this Course", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
-      <% end  %>
-      </td>
-      </tr>
-  <% end  %>
+ <div class="container" ">
+ <div class="row">
+   <div class="span12"  style="background:white;">
+     <div class="container">
+       <div class="row">
+         <div class="span12" >
+           <div class="col-md-4" style="padding:10px; box-shadow:0px 0px 6px 0px;">
+             <div class="well well-sm">
+               <div class="media">
+                 <a class="thumbnail pull-right" href="#">
+                   <%=image_tag(@course.course_image.url, :style=>"width:450px;height:300px;",:class=>"media-object") %>
+                 </a>
 
-    <% @other_events.each do |event|  %>
-        <tr><td colspan="2"><%= event.title %></td></tr>
-        <tr>
-          <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
-          <td>
-            <% if current_user!=nil and current_user.actor.user_type =="student" %>
-                <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
-            <% end  %>
-          </td>
-        </tr>
-    <% end  %>
-
-  </table>
+                 <div class="media-body">
+                   <h3 class="media-heading"><%= @course.activity_object.title%>p</h3>
+                   <p><%= @course.activity_object.description%></p>
+                   <p class="event_price">
+                     <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %></p>
+                 </div>
+               </div>
+             </div>
 
 
-  <table>
-    <% @users.each do |user|  %>
-        <tr>
-          <td><%= user.name  %></td>
-          <td><%= image_tag(user.logo.url,:style=>"width:50px;height:50px;")%></td>
-        </tr>
-    <% end  %>
-  </table>
+             <div class="well well-sm ">
+               <div class="media">
+                 <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
+                   <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                     <h3>Class Room</h3>
+                   </div>
+                   <div class="media-body">
 
-</div>
+                     <div style="text-align:center; padding-left: 30px">
+                       <table>
+                         <% @enrolled_events.each do |event|  %>
+                             <tr><td colspan="2"><%= event.title %></td></tr>
+                             <tr>
+                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
+                               <td>
+                                 <% if current_user!=nil and current_user.actor.user_type =="student" %>
+                                     <%= link_to "Take this Course", "#" , :class=>"btn"%>
+                                 <% end  %>
+                               </td>
+                             </tr>
+                         <% end  %>
+                         </table>
+                     </div>
+                   </div>
+                 </div>
 
+                 <div class="span4 pull-right" style="background:white; text-align:center; box-shadow:0px 0px 6px 0px; ">
+                   <p><h4> About Creator</h4></p>
+                   <div class="col-sm-2 col-md-2 pull-right" style="padding:6px;">
+                     <%= image_tag(@course.author.logo.url, :style=>"width:100px;height:100px;",:class=>"img-rounded img-responsive")%>
+                   </div>
+                   <div class="col-sm-4 col-md-4" style="padding:6px;" >
+
+                     <p><%=link_to @course.author.name, user_path(@course.author) %></p> <small><cite title="Source Title"> <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+
+                     <!--<p> <i class="glyphicon glyphicon-envelope"></i> masterwayne@batman.com
+                       <br
+                       /> <i class="glyphicon glyphicon-globe"></i> www.bootsnipp.com
+                       <br /> <i class="glyphicon glyphicon-gift"></i> January 30, 1974</p>-->
+                   </div>
+
+                 </div>
+
+
+
+               </div>
+
+
+             </div>
+
+
+
+             <div class="well well-sm">
+
+
+               <div class="media">
+                 <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
+                   <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                     <h3>Upcoming Events</h3>
+                   </div>
+                   <div class="media-body">
+
+                     <div style="text-align:center; padding-left: 30px">
+                       <table>
+                       <% @other_events.each do |event|  %>
+                           <tr><td colspan="2"><%= event.title %></td></tr>
+                           <tr>
+                             <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
+                             <td>
+                               <% if current_user!=nil and current_user.actor.user_type =="student" %> &nbsp;
+                                   <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn"%>
+                               <% end  %>
+                             </td>
+                           </tr>
+                       <% end  %>
+
+                       </table>                     </div>
+                   </div>
+                 </div>
+
+
+
+
+                 <div class="span4 pull-right" style="background:white; text-align:center; box-shadow:0px 0px 6px 0px;">
+                   <p><h4> Learners Enrolled</h4></p>
+                   <div class="left_content_box2">
+                     <div class="container">
+                     <div class="row">
+                       <div class="span4">
+                         <% @users.each do |user|  %>
+                         <div class="span1"><div class="listing_row1"><div class="listing_box1">
+                           <div class="user_img2">
+                            <span><a href="/student-profile-public.php?user_id=17855">
+                            <%= image_tag(user.logo.url,:style=>"width:50px;height:50px;")%></a>
+                                                        </span></div>
+                           <div><div class="box_title"><a class="link1" href="/student-profile-public.php?user_id=17855"><%= user.name  %></a></div></div>
+                         </div><div class="listing_spacer1"></div>
+
+                           <div class="clear"></div>
+                         </div>
+                         </div></div>
+
+
+
+                     </div></div>
+
+
+
+
+                   </div>
+                         <% end  %>
+                 </div>
+               </div>
+               </div>
+
+
+
+
+
+
+
+
+               </div>
+             </div>
+           </div>
+
+
+
+
+
+
+
+
+
+
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+ </div>
+ <!--Course Detail Ends-->
+
+
+
+ </div>
+ </div>
+
+
+ </div>
+ </div>
