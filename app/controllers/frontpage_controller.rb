@@ -42,13 +42,13 @@ class FrontpageController < ApplicationController
 
   def enrolled_courses
 
-    @events = Event.where("start_date > ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
+    @events = Event.where("start_date >= ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
 
   end
 
    def completed_courses
 
-     @events = Event.where("start_date <= ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
+     @events = Event.where("start_date < ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
 
   end
 

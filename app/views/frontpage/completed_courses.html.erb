@@ -3,19 +3,14 @@
 
   <div class="timeline">
     <ul class="nav nav-tabs" id="myTab">
-      <li class="active"><a href="#">UpcomingCourses</a></li>
-      <li><a href="#">CompletedCourses</a></li>
+      <li><%= link_to "Upcoming Courses", enrolled_courses_path %></li>
+
+      <li  class="active"><%= link_to "Completed Courses", completed_courses_path %></li>
 
     </ul>
 
-    <script>
-        $('#myTab a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-    </script>
 
-    <h3>My Courses</h3>
+    <h3>Completed Courses</h3>
     <% @events.each do |event|  %>
         <div class="span4" style="width: 355px;">
           <div class="tile_list_tile tile_list_tile_4">
