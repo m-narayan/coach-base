@@ -13,13 +13,21 @@ class FrontpageController < ApplicationController
 
   def course_details
     @course=Course.find(params[:id])
+    #event.payments.find_by_user_id_and_event_id(2,1)
+    @events=@course.events
     @users = []
+    @enrolled_events=[]
+    @other_events=[]
     @course.events.each do |event|
       event.payments.each do |payment|
         @users << payment.user
+        if payment.user_id == current_user.id
+          @enrolled_events << payment.event
+        end
       end
     end
     @users=@users.uniq
+    @other_events=@events - @enrolled_events.uniq
   end
 
   def payment_confirm
