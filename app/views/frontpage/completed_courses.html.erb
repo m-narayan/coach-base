@@ -1,13 +1,14 @@
 <section id="home">
+  <ul class="nav nav-tabs" id="myTab">
+    <li><%= link_to "Upcoming Courses", enrolled_courses_path %></li>
+
+    <li  class="active"><%= link_to "Completed Courses", completed_courses_path %></li>
+
+  </ul>
   <%= render partial: 'toolbar/home' %>
 
   <div class="timeline">
-    <ul class="nav nav-tabs" id="myTab">
-      <li><%= link_to "Upcoming Courses", enrolled_courses_path %></li>
 
-      <li  class="active"><%= link_to "Completed Courses", completed_courses_path %></li>
-
-    </ul>
 
 
     <h3>Completed Courses</h3>

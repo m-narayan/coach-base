@@ -1,11 +1,10 @@
 <section id="home">
+  <ul class="nav nav-tabs" id="myTab">
+    <li class="active"><%= link_to "Upcoming Courses", enrolled_courses_path %></li>
+    <li><%= link_to "Completed Courses", completed_courses_path %></li> </ul>
   <%= render partial: 'toolbar/home' %>
 
-  <div class="timeli+ne">
-    <ul class="nav nav-tabs" id="myTab">
-      <li class="active"><%= link_to "Upcoming Courses", enrolled_courses_path %></li>
-
-      <li><%= link_to "Completed Courses", completed_courses_path %></li>
+  <div class="timeline">
 
          <h3>Enrolled Courses</h3>
       <% @events.each do |event|  %>
