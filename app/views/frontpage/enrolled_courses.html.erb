@@ -1,19 +1,12 @@
 <section id="home">
   <%= render partial: 'toolbar/home' %>
 
-  <div class="timeline">
+  <div class="timeli+ne">
     <ul class="nav nav-tabs" id="myTab">
       <li class="active"><a href="#">UpcomingCourses</a></li>
       <li><a href="#">CompletedCourses</a></li>
 
     </ul>
-
-    <script>
-        $('#myTab a').click(function (e) {
-            e.preventDefault();
-            $(this).tab('show');
-        })
-    </script>
 
       <h3>My Courses</h3>
       <% @events.each do |event|  %>
@@ -29,7 +22,7 @@
                   <div class="clear"></div>
                   <div class="tile_sell_price hide"><%= event.course.price %></div>
                     <div class="button_green_small tile_action">
-                      <p class="left"><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></p>
+                      <p class="left"><%= event.start_at.strftime("%b %d")  %></p>
                     </div>
                   </div>
               </div>
