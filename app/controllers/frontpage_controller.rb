@@ -21,8 +21,10 @@ class FrontpageController < ApplicationController
     @course.events.each do |event|
       event.payments.each do |payment|
         @users << payment.user
-        if payment.user_id == current_user.id
+        if !current_user.nil?
+         if  payment.user_id == current_user.id
           @enrolled_events << payment.event
+         end
         end
       end
     end

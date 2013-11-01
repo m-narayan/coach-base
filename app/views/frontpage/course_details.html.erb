@@ -33,12 +33,12 @@
                      <div style="text-align:center; padding-left: 30px">
                        <table>
                          <% @enrolled_events.each do |event|  %>
-                             <tr><td colspan="2"><%= event.title %></td></tr>
+                            <tr><td colspan="2"><p class="text-left"><strong> <%= event.title %></strong></p></td></tr>
                              <tr>
-                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
+                               <td><p class="text-left"><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></p></td>
                                <td>
                                  <% if current_user!=nil and current_user.actor.user_type =="student" %>
-                                     <%= link_to "Take this Course", "#" , :class=>"btn"%>
+                                     <%= link_to "Take this Course", "#" , :class=>"btn btn-primary"%>
                                  <% end  %>
                                </td>
                              </tr>
@@ -84,15 +84,15 @@
                    </div>
                    <div class="media-body">
 
-                     <div style="text-align:center; padding-left: 30px">
+                     <div style="text-align:center; padding-left: 30px ">
                        <table>
                        <% @other_events.each do |event|  %>
-                           <tr><td colspan="2"><%= event.title %></td></tr>
+                           <tr><td style=" padding-right: 30px;"><%= event.title %></td></tr>
                            <tr>
                              <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
-                             <td>
+                             <td style=" padding-left: 80px;">
                                <% if current_user!=nil and current_user.actor.user_type =="student" %> &nbsp;
-                                   <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn"%>
+                                   <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary "%>
                                <% end  %>
                              </td>
                            </tr>
@@ -101,7 +101,6 @@
                        </table>                     </div>
                    </div>
                  </div>
-
 
 
 
@@ -127,9 +126,6 @@
 
 
                      </div></div>
-
-
-
 
                    </div>
                          <% end  %>
