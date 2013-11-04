@@ -52,7 +52,7 @@ class FrontpageController < ApplicationController
 
      @events = Event.where("start_date < ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
 
-  end
+   end
 
   private
 
