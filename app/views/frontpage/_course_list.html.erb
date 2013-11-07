@@ -5,8 +5,8 @@
   <div class="span4">
        <div class="tile_list_tile tile_list_tile_4">
          <a href=""> <div id="tile_nid_4107" class="tile tile_mid tile_even">
-          <%=link_to image_tag(course.course_image.url, :style=>"width:310px;height:175px;") ,course_details_path(id:course) %>
-          <%= link_to course_details_path(id:course) do %>  <div class="tile_info" style="padding-bottom: 0px;">
+          <%=link_to image_tag(course.course_image.url, :style=>"width:310px;height:175px;") ,course_course_profile_path(course) %>
+          <%= link_to course_course_profile_path(course) do %>  <div class="tile_info" style="padding-bottom: 0px;">
             <div class="tile_title left">
               <%= course.activity_object.title%>	</div>
             <div class="tile_instructors left">

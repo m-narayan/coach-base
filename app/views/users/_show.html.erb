@@ -9,8 +9,8 @@
             <div class="tile_list_tile tile_list_tile_4">
               <div id="tile_nid_4107" class="tile tile_mid tile_even">
                 <a href="">
-                  <%=link_to image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;") ,course_details_path(id:event) %>
-                  <%= link_to course_details_path(id:event) do %>       <div class="tile_info" style="padding-bottom: 0px;">
+                  <%=link_to image_tag(event.course.course_image.url, :style=>"width:310px;height:175px;") ,course_course_profile_path(course_id:event.course.id) %>
+                  <%= link_to course_course_profile_path(course_id:event.course.id) do %>       <div class="tile_info" style="padding-bottom: 0px;">
                   <div class="tile_title left">
                     <%= event.course.activity_object.title%>	</div>
                   <div class="tile_instructors left">
