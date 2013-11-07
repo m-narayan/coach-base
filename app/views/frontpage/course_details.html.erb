@@ -1,9 +1,7 @@
 
-<<<<<<< HEAD
- <div class="container">
-=======
+
  <div class="container" >
->>>>>>> detailpage
+
  <div class="row">
    <div class="span12"  style="background:white;">
      <div class="container">
@@ -35,15 +33,7 @@
                    <div style="text-align:center; padding-left: 30px">
                        <table>
                          <% @enrolled_events.each do |event|  %>
-<<<<<<< HEAD
-                             <tr ><td colspan="2"><%= event.title %></td></tr>
-                             <tr>
-                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
-=======
-                             <tr><td colspan="2"><%= event.title %></td></tr>
-                             <tr>
-                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
->>>>>>> detailpage
+
                                <td>
                                  <% if current_user!=nil and current_user.actor.user_type =="student" %>
                                      <%= link_to "Take this Course", "#" , :class=>"btn"%>
@@ -95,12 +85,7 @@
                        <% @other_events.each do |event|  %>
                            <tr><td colspan="2"><%= event.title %></td></tr>
                            <tr>
-<<<<<<< HEAD
-                             <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
-=======
-                             <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
-                             
->>>>>>> detailpage
+
                              <td>
                                <% if current_user!=nil and current_user.actor.user_type =="student" %> &nbsp;
                                    <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn"%>
@@ -117,7 +102,7 @@
 
 
                  <div class="span4 pull-right" style="background:white; text-align:center; box-shadow:0px 0px 6px 0px;">
-<<<<<<< HEAD
+
 
                    <div class="left_content_box2">
                         <div class="accordion">
@@ -144,26 +129,6 @@
                                 </div>
                            </div>
 
-=======
-                   <p><h4 style="margin: 0px auto;width: 80%;padding: 5px 0px;border-bottom: 1px solid hsl(0, 0%, 80%);min-height: 30px;"> Learners Enrolled</h4></p>
-                  
-                   <div class="left_content_box2">
-                     <div class="container">
-                     <div class="row">
-                       <div class="span4">
-                         
-                        <div class="listing_row1">
-                         <% @users.each do |user|  %>
-                          <div class="listing_box1">
-                           <div class="user_img2">
-                            <span>
-                            <%= image_tag(user.logo.url,:style=>"width:50px;height:50px;")%>
-                                                        </span></div>
-                           <div><div class="box_title"><a class="link1" href="/student-profile-public.php?user_id=17855"><%= user.name  %></a></div></div><div class="listing_spacer1">
-                         </div></div>
-                          <% end  %>
-                      <div class="clear"></div>
->>>>>>> detailpage
                          </div>
                        </div>
 
@@ -176,11 +141,7 @@
 
 
                    </div>
-<<<<<<< HEAD
 
-=======
-                 
->>>>>>> detailpage
                  </div>
                </div>
                </div>
