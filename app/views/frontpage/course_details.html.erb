@@ -1,5 +1,5 @@
 
- <div class="container" ">
+ <div class="container" >
  <div class="row">
    <div class="span12"  style="background:white;">
      <div class="container">
@@ -9,11 +9,11 @@
              <div class="well well-sm">
                <div class="media">
                  <a class="thumbnail pull-right" href="#">
-                   <%=image_tag(@course.course_image.url, :style=>"width:450px;height:300px;",:class=>"media-object") %>
+                   <%=image_tag(@course.course_image.url, :style=>"width:200px;height:200px;",:class=>"media-object") %>
                  </a>
 
                  <div class="media-body">
-                   <h3 class="media-heading"><%= @course.activity_object.title%>p</h3>
+                   <h3 class="media-heading"><%= @course.activity_object.title%></h3>
                    <p><%= @course.activity_object.description%></p>
                    <p class="event_price">
                      <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %></p>
@@ -24,8 +24,8 @@
 
              <div class="well well-sm ">
                <div class="media">
-                 <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
-                   <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                 <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white;border-radius: 10px;">
+                   <div style=" background:steelblue; min-height:40px; color:white; padding-left: 10px;padding-top: 10px;border-radius: 10px 10px 0px 0px;">
                      <h3>Class Room</h3>
                    </div>
                    <div class="media-body">
@@ -33,12 +33,12 @@
                      <div style="text-align:center; padding-left: 30px">
                        <table>
                          <% @enrolled_events.each do |event|  %>
-                            <tr><td colspan="2"><p class="text-left"><strong> <%= event.title %></strong></p></td></tr>
+                             <tr><td colspan="2"><%= event.title %></td></tr>
                              <tr>
-                               <td><p class="text-left"><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></p></td>
+                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
                                <td>
                                  <% if current_user!=nil and current_user.actor.user_type =="student" %>
-                                     <%= link_to "Take this Course", "#" , :class=>"btn btn-primary"%>
+                                     <%= link_to "Take this Course", "#" , :class=>"btn"%>
                                  <% end  %>
                                </td>
                              </tr>
@@ -78,21 +78,22 @@
 
 
                <div class="media">
-                 <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
-                   <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                 <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white;border-radius:10px">
+                   <div style=" background:steelblue; min-height:40px; color:white; padding-left: 10px;padding-top: 10px;border-radius: 10px 10px 0px 0px;">
                      <h3>Upcoming Events</h3>
                    </div>
                    <div class="media-body">
 
-                     <div style="text-align:center; padding-left: 30px ">
+                     <div style="text-align:center; padding-left: 30px">
                        <table>
                        <% @other_events.each do |event|  %>
-                           <tr><td style=" padding-right: 30px;"><%= event.title %></td></tr>
+                           <tr><td colspan="2"><%= event.title %></td></tr>
                            <tr>
                              <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
-                             <td style=" padding-left: 80px;">
+                             
+                             <td>
                                <% if current_user!=nil and current_user.actor.user_type =="student" %> &nbsp;
-                                   <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary "%>
+                                   <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn"%>
                                <% end  %>
                              </td>
                            </tr>
@@ -104,31 +105,39 @@
 
 
 
+
                  <div class="span4 pull-right" style="background:white; text-align:center; box-shadow:0px 0px 6px 0px;">
-                   <p><h4> Learners Enrolled</h4></p>
+                   <p><h4 style="margin: 0px auto;width: 80%;padding: 5px 0px;border-bottom: 1px solid hsl(0, 0%, 80%);min-height: 30px;"> Learners Enrolled</h4></p>
+                  
                    <div class="left_content_box2">
                      <div class="container">
                      <div class="row">
                        <div class="span4">
-                         <% @users.each do |user|  %>
-                         <div class="span1"><div class="listing_row1"><div class="listing_box1">
+                         
+                        <div class="listing_row1">
+ <% @users.each do |user|  %>
+                          <div class="listing_box1">
                            <div class="user_img2">
-                            <span><a href="/student-profile-public.php?user_id=17855">
-                            <%= image_tag(user.logo.url,:style=>"width:50px;height:50px;")%></a>
+                            <span>
+                            <%= image_tag(user.logo.url,:style=>"width:50px;height:50px;")%>
                                                         </span></div>
-                           <div><div class="box_title"><a class="link1" href="/student-profile-public.php?user_id=17855"><%= user.name  %></a></div></div>
-                         </div><div class="listing_spacer1"></div>
-
-                           <div class="clear"></div>
+                           <div><div class="box_title"><a class="link1" href="/student-profile-public.php?user_id=17855"><%= user.name  %></a></div></div><div class="listing_spacer1">
+                         </div></div>
+                          <% end  %>
+                      <div class="clear"></div>
                          </div>
                          </div></div>
 
+                          
 
 
                      </div></div>
 
+
+
+
                    </div>
-                         <% end  %>
+                 
                  </div>
                </div>
                </div>
