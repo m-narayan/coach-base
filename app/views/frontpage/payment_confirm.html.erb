@@ -1,7 +1,7 @@
  <h3 style="text-align: center;">Order Details</h3>
 <table class="table table-bordered table-striped">
-<thead><th></th><th>Title</th><th>Description</th><th>Quantity</th><th>Price</th></thead>
-  <tr><td style="text-align: center;"><%=image_tag(@event.course.course_image.url, :style=>"width:310px;height:175px;") %></td>
+<thead style="background-color: #047fdb;color:white"><th></th><th>Title</th><th>Description</th><th>Quantity</th><th>Price</th></thead>
+  <tr ><td width="20%" style="text-align: center;"><%=image_tag(@event.course.course_image.url, :style=>"width:310px;height:175px;") %></td>
     <td><%= @event.course.title%></td><td><%= @event.course.description%></td><td>1</td><td><%= number_to_currency(@event.course.price, :precision => 2,:delimiter => ',')%></td></tr>
   <tr><td colspan="5" style="text-align: center;">
   <% @grouped_payments.each do |payments| %>

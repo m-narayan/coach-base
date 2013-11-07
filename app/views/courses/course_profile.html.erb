@@ -14,9 +14,10 @@
 
                   <div class="media-body">
                     <h3 class="media-heading"><%= @course.activity_object.title%>p</h3>
-                    <p><%= @course.activity_object.description%></p>
                     <p class="event_price">
                       <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %></p>
+
+                    <p><%= @course.activity_object.description%></p>
                   </div>
                 </div>
               </div>
@@ -30,14 +31,18 @@
                         </div>
                         <div class="media-body">
                           <div style="text-align:center; padding-left: 30px">
-                            <table>
+                            <table class="table" style="width: 100%;" >
                               <% @enrolled_events.each do |event|  %>
-                                  <tr ><td colspan="2"><%= event.title %></td></tr>
                                   <tr>
-                                    <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
-                                    <td>
+                                    <td style="text-align: justify" width="70%"><%= event.title %><br>
+                                      <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
+
+                                    </td>
+
+                                    <td style="text-align: right">
                                       <%= link_to "Take this Course", "#" , :class=>"btn btn-primary"%>
                                     </td>
+                                    <td colspan="2">&nbsp;</td>
                                   </tr>
                               <% end  %>
                             </table>
@@ -49,20 +54,23 @@
               <% if current_user!=nil and current_user.actor.user_type =="coach" %>
                   <div class="well well-sm ">
                     <div class="media">
-                      <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
+                      <div class="span7" style="background:white">
                         <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
                           <h3>Class Room</h3>
                         </div>
                         <div class="media-body">
-                          <div style="text-align:center; padding-left: 30px">
-                            <table>
+                          <div style="text-align:center; padding-left: 30px" >
+                            <table class="table" style="width: 100%;" >
                               <% @events.each do |event|  %>
-                                  <tr ><td colspan="2"><%= event.title %></td></tr>
                                   <tr>
-                                    <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
-                                    <td>
+                                    <td style="text-align: justify" width="70%"><%= event.title %><br>
+                                      <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
+
+                                    </td>
+                                    <td style="text-align: right">
                                       <%= link_to "Start Class", "#" , :class=>"btn btn-primary"%>
                                     </td>
+                                    <td colspan="2">&nbsp;</td>
                                   </tr>
                               <% end  %>
                             </table>
@@ -110,20 +118,23 @@
                         <div class="media-body">
 
                           <div style="text-align:center; padding-left: 30px ">
-                            <table>
-                              <% @other_events.each do |event|  %>
-                                  <tr><td style=" padding-right: 30px;"><%= event.title %></td></tr>
-                                  <tr>
-                                    <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
-                                    <td>
-                                      <% if current_user!=nil and current_user.actor.user_type =="student" %> &nbsp;
-                                          <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary "%>
-                                      <% end  %>
-                                    </td>
-                                  </tr>
-                              <% end  %>
 
-                            </table>
+                              <table class="table" style="width: 100%;" >
+                                <% @other_events.each do |event|  %>
+                                    <tr>
+                                      <td style="text-align: justify" width="70%"><%= event.title %><br>
+                                        <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
+
+                                      </td>
+
+                                      <td style="text-align: right" valign="bottom">
+                                        <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
+                                      </td>
+                                      <td colspan="2">&nbsp;</td>
+                                    </tr>
+                                <% end  %>
+                              </table>
+
                           </div>
                         </div>
                       </div>
