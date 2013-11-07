@@ -21,7 +21,6 @@
                </div>
              </div>
 
-
              <div class="well well-sm ">
                <div class="media">
                  <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
@@ -33,9 +32,9 @@
                      <div style="text-align:center; padding-left: 30px">
                        <table>
                          <% @enrolled_events.each do |event|  %>
-                             <tr><td colspan="2"><%= event.title %></td></tr>
+                             <tr ><td colspan="2"><%= event.title %></td></tr>
                              <tr>
-                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
+                               <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
                                <td>
                                  <% if current_user!=nil and current_user.actor.user_type =="student" %>
                                      <%= link_to "Take this Course", "#" , :class=>"btn"%>
@@ -89,7 +88,7 @@
                        <% @other_events.each do |event|  %>
                            <tr><td colspan="2"><%= event.title %></td></tr>
                            <tr>
-                             <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p %Z")  %></td>
+                             <td><%= event.start_at.strftime("%A, %B %d, %Y at %l%p")  %></td>
                              <td>
                                <% if current_user!=nil and current_user.actor.user_type =="student" %> &nbsp;
                                    <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn"%>
