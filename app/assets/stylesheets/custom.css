@@ -110,8 +110,13 @@ background-color: hsl(40, 10%, 94%);
 
 
 .left_content_box2 {
-    padding: 10px 0px 0px;
+
+    
     border-top: 1px solid #CCC;
+
+   
+    
+
 }
 
 .listing_row1 {
@@ -120,7 +125,11 @@ background-color: hsl(40, 10%, 94%);
 
 .listing_box1 {
     float: left;
+
     width: 115px;
+
+
+    width: 80px;
 
     font-size: 11px;
 }
