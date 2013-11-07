@@ -13,6 +13,7 @@ class FrontpageController < ApplicationController
 
   def course_details
     @course=Course.find(params[:id])
+    @events = []
     @events = Event.where("start_date >= ?", Date.today).where("course_id =?",params[:id])
     @users = []
     @enrolled_events=[]
