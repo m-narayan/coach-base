@@ -13,12 +13,11 @@ class FrontpageController < ApplicationController
 
   def course_details
     @course=Course.find(params[:id])
-    #event.payments.find_by_user_id_and_event_id(2,1)
-    @events=@course.events
+    @events = Event.where("start_date >= ?", Date.today).where("course_id =?",params[:id])
     @users = []
     @enrolled_events=[]
     @other_events=[]
-    @course.events.each do |event|
+    @events.each do |event|
       event.payments.each do |payment|
         @users << payment.user
         if !current_user.nil?
@@ -37,21 +36,16 @@ class FrontpageController < ApplicationController
     @grouped_payments = [[Payment.digital.build]]
   end
 
-
   def my_courses
     @events = current_user.events
   end
 
   def enrolled_courses
-
     @events = Event.where("start_date >= ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
-
   end
 
    def completed_courses
-
      @events = Event.where("start_date < ?", Date.today ).where(id: Payment.where(:user_id =>current_user.id,:completed=>true).map(&:event_id))
-
    end
 
   private
@@ -59,7 +53,6 @@ class FrontpageController < ApplicationController
   def redirect_user_to_home
     redirect_to(home_path) if user_signed_in?
   end
-
 
 end
 
