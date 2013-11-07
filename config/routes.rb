@@ -67,6 +67,10 @@ CoachBase::Application.routes.draw do
     end
   end
 
+  resources :courses  do
+    match "course_profile", :to => 'courses#course_profile'
+  end
+
   # bigbluebutton_routes :default, :only => 'servers'
   # bigbluebutton_routes :default, :only => 'rooms'
   # bigbluebutton_routes :default, :only => 'recordings'
@@ -77,7 +81,6 @@ CoachBase::Application.routes.draw do
   # :rooms => 'custom_rooms',
   # :recordings => 'custom_recordings'
   # }
-  match 'course_details',:to => 'frontpage#course_details'
   match 'payment_confirm',:to => 'frontpage#payment_confirm'
   match 'my_courses',:to => 'frontpage#my_courses'
   match 'enrolled_courses',:to => 'frontpage#enrolled_courses'

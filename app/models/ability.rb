@@ -4,6 +4,6 @@ class Ability
   def initialize(subject)
     super
 
-   can :read , :all
+   can :manage , :all
   end
 end

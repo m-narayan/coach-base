@@ -1,6 +1,7 @@
 class CoursesController < ApplicationController
   before_filter :hack_auth , :only => [ :create,:update]
   before_filter :check_coach , :only => [ :new,:create,:update,:destroy]
+  load_and_authorize_resource except: [ :course_profile]
   include SocialStream::Controllers::Objects
 
   # GET /courses
@@ -82,6 +83,28 @@ class CoursesController < ApplicationController
     end
   end
 
+  def course_profile
+    @course=Course.find(params[:course_id])
+    @events = []
+    @events = Event.where("start_date >= ?", Date.today).where("course_id =?",params[:course_id])
+    @users = []
+    @enrolled_events=[]
+    @other_events=[]
+    @events.each do |event|
+      event.payments.each do |payment|
+        @users << payment.user
+        if !current_user.nil?
+          if  payment.user_id == current_user.id
+            @enrolled_events << payment.event
+          end
+        end
+      end
+    end
+    @users=@users.uniq
+    @other_events=@events - @enrolled_events.uniq
+  end
+
+
   private
 
     # Use this method to whitelist the permissible parameters. Example:
@@ -101,4 +124,6 @@ class CoursesController < ApplicationController
   def check_coach
     redirect_to(root_path) unless current_user.user_type == "coach"
   end
+
+
 end
