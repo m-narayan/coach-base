@@ -13,7 +13,7 @@
                  </a>
 
                  <div class="media-body">
-                   <h3 class="media-heading"><%= @course.activity_object.title%>p</h3>
+                   <h3 class="media-heading"><%= @course.activity_object.title%></h3>
                    <p><%= @course.activity_object.description%></p>
                    <p class="event_price">
                      <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %></p>
@@ -52,7 +52,7 @@
                        <div class="accordion-heading country">
                          <a class="accordion-toggle" data-toggle="collapse" href="#creator"><h4> About Creator<span style="float:right;">+</span></h4></a>
                        </div>
-                       <div id="creator" class="accordion-body collapse">
+                       <div id="creator" class="accordion-body collapse in">
                          <div class="accordion-inner" style="padding: 9px 0px;" >
                            <div class="col-sm-2 col-md-2 pull-right" style="padding:6px;">
                              <%= image_tag(@course.author.logo.url, :style=>"width:100px;height:100px;",:class=>"img-rounded img-responsive")%>
@@ -95,7 +95,7 @@
                            </tr>
                        <% end  %>
 
-                       </table>                     </div>
+                       </table></div>
                    </div>
                  </div>
 
@@ -109,7 +109,7 @@
                            <div class="accordion-heading country">
                               <a class="accordion-toggle" data-toggle="collapse" href="#country1"> <h4> Learners Enrolled<span style="float:right;">+</span></h4></a>
                            </div>
-                           <div id="country1" class="accordion-body collapse">
+                           <div id="country1" class="accordion-body collapse in">
                              <div class="accordion-inner" style="padding: 9px 0px;" >
                                <div class="">
 
