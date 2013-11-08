@@ -119,21 +119,21 @@
 
                           <div style="text-align:center; padding-left: 30px ">
 
-                              <table class="table" style="width: 100%;" >
-                                <% @other_events.each do |event|  %>
-                                    <tr>
-                                      <td style="text-align: justify" width="70%"><%= event.title %><br>
-                                        <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
+                            <table class="table" style="width: 100%;" >
+                              <% @other_events.each do |event|  %>
+                                  <tr>
+                                    <td style="text-align: justify" width="70%"><%= event.title %><br>
+                                      <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
-                                      </td>
+                                    </td>
 
-                                      <td style="text-align: right" valign="bottom">
-                                        <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
-                                      </td>
-                                      <td colspan="2">&nbsp;</td>
-                                    </tr>
-                                <% end  %>
-                              </table>
+                                    <td style="text-align: right" valign="bottom">
+                                      <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
+                                    </td>
+                                    <td colspan="2">&nbsp;</td>
+                                  </tr>
+                              <% end  %>
+                            </table>
 
                           </div>
                         </div>
