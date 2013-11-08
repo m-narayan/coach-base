@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   belongs_to :room
   belongs_to  :course
   has_many  :payments
-
+  has_one :bigbluebutton_room, :as => :owner, :dependent => :destroy
 
   validates_presence_of :course_id
 

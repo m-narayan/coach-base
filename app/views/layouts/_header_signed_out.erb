@@ -1,5 +1,18 @@
-<header class="headerFront <%= header_logo_class %>">
-  <%= render partial: 'layouts/logo_out' %>
-  <div class="brand">
-  </div>
-</header>
+
+
+<header class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container-fluid" style="background-color:hsl(39, 3%, 40%);">
+      <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar collapsed"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <%= link_to(image_tag('header-logo-index.png', class: "logo", :alt => t('site.name')), root_path) %>
+      <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
+        <ul class="nav pull-right" style="margin-top: 20px;">
+          <%= link_to "Login", new_session_path(:user) , class: "move-to-right-top"%> |
+          <%= link_to "Coach Sign Up", new_registration_path(:user,:user_type=>"coach"),class: "move-to-right-top" %> |
+          <%= link_to "User Sign Up", new_registration_path(:user,:user_type=>"student"),class: "move-to-right-top" %>
+
+        </ul></div>
+
+    </div>
+  </div></header>
+
+

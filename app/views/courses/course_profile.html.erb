@@ -26,26 +26,24 @@
                   <div class="well well-sm ">
                     <div class="media">
                       <div class="span6" style="box-shadow:0px 0px 6px 0px; background:white;border-radius: 10px;">
-                        <div style=" background:steelblue; min-height:40px; color:white;  padding-left:25px; padding-top:10px;border-radius: 10px 10px 0px 0px;">
-                          <h3>Class Room</h3>
-                        </div>
+                          <h3 style="text-align: center">Class Room</h3>
                         <div class="media-body">
-                          <div style="text-align:center; padding-left: 30px">
-                            <table class="table" style="width: 100%;" >
+                          <div style="text-align:center; padding-left: 20px;padding-right: 20px" >
                               <% @enrolled_events.each do |event|  %>
+                                <table  style="width: 100%;background-color: #bdd8eb" >
                                   <tr>
-                                    <td style="text-align: justify" width="70%"><%= event.title %><br>
-                                      <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
+                                    <td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                  <tr><td style="text-align: justify" width="70">
+                                    <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
-                                    </td>
-
-                                    <td style="text-align: right">
+                                  </td>
+                                    <td valign="bottom" style="text-align: right">
                                       <%= link_to "Take this Course", "#" , :class=>"btn btn-primary"%>
                                     </td>
-                                    <td colspan="2">&nbsp;</td>
                                   </tr>
+                                </table>
+                                <br/>
                               <% end  %>
-                            </table>
                           </div>
                         </div>
                       </div>
@@ -56,26 +54,25 @@
                     <div class="media">
 
                       <div class="span10" style="background:white;border-radius: 10px;">
-                        <div style=" background:steelblue; min-height:40px; color:white; padding-left:25px; padding-top:10px;border-radius: 10px 10px 0px 0px;">
-
-                          <h3>Class Room</h3>
-                        </div>
+                          <h3 style="text-align: center">Class Room</h3>
                         <div class="media-body">
-                          <div style="text-align:center; padding-left: 30px" >
-                            <table class="table" style="width: 100%;" >
+                          <div style="text-align:center; padding-left: 20px;padding-right: 20px" >
                               <% @events.each do |event|  %>
-                                  <tr span class="badge">
-                                    <td style="text-align: justify" width="70%"><%= event.title %><br></span>
+                                <table  style="width: 100%;background-color: #bdd8eb" >
+                                  <tr>
+                                    <td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                  <tr><td style="text-align: justify" width="70">
                                       <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
                                     </td>
-                                    <td style="text-align: right">
+                                    <td valign="bottom" style="text-align: right">
                                       <%= link_to "Start Class", "#" , :class=>"btn btn-primary"%>
                                     </td>
-                                    <td colspan="2">&nbsp;</td>
                                   </tr>
+                                </table>
+                                <br/>
                               <% end  %>
-                            </table>
+
                           </div>
                         </div>
                       </div>
@@ -115,29 +112,26 @@
                   <div class="well well-sm">
                     <div class="media">
                       <div class="span6" style="box-shadow:0px 0px 6px 0px; background:white;border-radius: 10px;">
-                        <div style=" background:steelblue; min-height:40px; color:white;  padding-left:25px; padding-top:10px;border-radius: 10px 10px 0px 0px;">
-                          <h3>Upcoming Events</h3>
-                        </div>
+                          <h3 style="text-align: center">Upcoming Events</h3>
                         <div class="media-body">
 
-                          <div style="text-align:center; padding-left: 30px ">
+                          <div style="text-align:center; padding-left: 20px;padding-right: 20px" >
 
-                            <table class="table" style="width: 100%;" >
                               <% @other_events.each do |event|  %>
-                                  <tr span class="badge">
-                                    <td style="text-align: justify" width="70%"><%= event.title %><br></span>
+                                  <table  style="width: 100%;background-color: #bdd8eb" >
+                                    <tr>
+                                      <td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                    <tr><td style="text-align: justify" width="70">
                                       <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
                                     </td>
-
-                                    <td style="text-align: right" valign="bottom">
-                                      <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
-                                    </td>
-                                    <td colspan="2">&nbsp;</td>
-                                  </tr>
+                                      <td valign="bottom" style="text-align: right">
+                                        <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                  <br/>
                               <% end  %>
-                            </table>
-
                           </div>
                         </div>
                       </div>
