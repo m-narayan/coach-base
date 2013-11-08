@@ -37,7 +37,7 @@
                                     <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
                                   </td>
-                                    <td valign="bottom" style="text-align: right">
+                                    <td valign="bottom" style="text-align: right;padding-right:10px;padding-bottom: 10px">
                                       <%= link_to "Take this Course", "#" , :class=>"btn btn-primary"%>
                                     </td>
                                   </tr>
@@ -65,7 +65,7 @@
                                       <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
                                     </td>
-                                    <td valign="bottom" style="text-align: right">
+                                    <td valign="bottom" style="text-align: right;padding-right:10px;padding-bottom: 10px">
                                       <%= link_to "Start Class", "#" , :class=>"btn btn-primary"%>
                                     </td>
                                   </tr>
@@ -125,7 +125,7 @@
                                       <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
                                     </td>
-                                      <td valign="bottom" style="text-align: right">
+                                      <td valign="bottom" style="text-align: right;padding-right:10px;padding-bottom: 10px">
                                         <%= link_to "Enroll", payment_confirm_path(id:event.id) , :class=>"btn btn-primary"%>
                                       </td>
                                     </tr>
