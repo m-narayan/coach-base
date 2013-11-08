@@ -13,7 +13,7 @@
                   </a>
 
                   <div class="media-body">
-                    <h3 class="media-heading"><%= @course.activity_object.title%>p</h3>
+                    <h3 class="media-heading"><%= @course.activity_object.title%></h3>
                     <p><%= @course.activity_object.description%></p>
                     <p class="event_price">
                       <%= number_to_currency(@course.price, :precision => 2,:delimiter => ',') %></p>
@@ -24,8 +24,8 @@
               <% if current_user!=nil and current_user.actor.user_type =="student" %>
                   <div class="well well-sm ">
                     <div class="media">
-                      <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
-                        <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                      <div class="span6" style="box-shadow:0px 0px 6px 0px; background:white;border-radius:10px;">
+                        <div style=" background:steelblue; min-height:40px; color:white;  padding-left:10px; padding-top: 10px;border-radius: 10px 10px 0px 0px;">
                           <h3>Class Room</h3>
                         </div>
                         <div class="media-body">
@@ -49,8 +49,8 @@
               <% if current_user!=nil and current_user.actor.user_type =="coach" %>
                   <div class="well well-sm ">
                     <div class="media">
-                      <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
-                        <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                      <div class="span6" style="box-shadow:0px 0px 6px 0px; background:white;border-radius: 10px;">
+                        <div style=" background:steelblue; min-height:40px; color:white;  padding-left:25px; padding-top: 10px;border-radius: 10px 10px 0px 0px;">
                           <h3>Class Room</h3>
                         </div>
                         <div class="media-body">
@@ -77,7 +77,7 @@
                     <div class="accordion-heading country">
                       <a class="accordion-toggle" data-toggle="collapse" href="#creator"><h4> About Creator<span style="float:right;">+</span></h4></a>
                     </div>
-                    <div id="creator" class="accordion-body collapse">
+                    <div id="creator" class="accordion-body collapse in">
                       <div class="accordion-inner" style="padding: 9px 0px;" >
                         <div class="col-sm-2 col-md-2 pull-right" style="padding:6px;">
                           <%= image_tag(@course.author.logo.url, :style=>"width:100px;height:100px;",:class=>"img-rounded img-responsive")%>
@@ -103,8 +103,8 @@
               <% if current_user!=nil and current_user.actor.user_type =="student" %>
                   <div class="well well-sm">
                     <div class="media">
-                      <div class="span7" style="box-shadow:0px 0px 6px 0px; background:white">
-                        <div style=" background:steelblue; min-height:40px; color:white; margin-top:-20px; padding-left:10px; padding-top:10px;">
+                      <div class="span6" style="box-shadow:0px 0px 6px 0px; background:white;border-radius:10px;">
+                        <div style=" background:steelblue; min-height:40px; color:white;  padding-left:25px; padding-top: 10px;border-radius: 10px 10px 0px 0px;">
                           <h3>Upcoming Events</h3>
                         </div>
                         <div class="media-body">
@@ -142,7 +142,7 @@
                     <div class="accordion-heading country">
                       <a class="accordion-toggle" data-toggle="collapse" href="#country1"> <h4> Learners Enrolled<span style="float:right;">+</span></h4></a>
                     </div>
-                    <div id="country1" class="accordion-body collapse">
+                    <div id="country1" class="accordion-body collapse in">
                       <div class="accordion-inner" style="padding: 9px 0px;" >
                         <div class="">
 
