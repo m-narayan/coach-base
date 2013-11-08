@@ -1,13 +1,16 @@
 <section id="home">
+  <%= render partial: 'toolbar/home' %>
+  <div class="span8">
   <ul class="nav nav-tabs" id="myTab">
-    <li><%= link_to "Upcoming Courses", enrolled_courses_path %></li>
+    <li><%= link_to "Enrolled Courses", enrolled_courses_path %></li>
 
     <li  class="active"><%= link_to "Completed Courses", completed_courses_path %></li>
 
   </ul>
-  <%= render partial: 'toolbar/home' %>
 
-  <div class="timeline">
+
+
+
 
     <h3>Completed Courses</h3>
     <% @events.each do |event|  %>
@@ -33,7 +36,7 @@
 
     <% end  %>
   </div>
-  </div   >
+
 
   <% if current_user.actor.user_type =="coach" %>
       <%= render partial: 'sidebar/show' %>
