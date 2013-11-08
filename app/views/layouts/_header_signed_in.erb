@@ -1,38 +1,38 @@
-<header class="navbar">
-  <nav class="navbar-inner">
-    <%= render partial: 'layouts/logo_in' %>
-    <div class="brand"></div>
-    <!-- FIXME: search javascript functionality in 'layouts/search' -->
+<header class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container-fluid" style="background-color:hsl(39, 3%, 40%);">
+      <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar collapsed"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <%= link_to(image_tag('header-logo-index.png', class: "logo", :alt => t('site.name')), root_path) %>
+      <div class="nav-collapse navbar-responsive-collapse collapse" style="height: 0px;">
+        <ul class="nav pull-right">
+          <li>
+            <%= link_to current_subject do %>
+                <%= image_tag current_subject.logo.url(:small), :class=>"user" %>
+                <span class="name hidden-phone"><%= truncate_name(current_subject.name, length: 15) %></span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to root_path do %>
+                <i class='icon_navbar-home <%= current_header_icon_class(:home) %>' title="<%= t 'header.icon.home' %>"></i>
+            <% end %>
+          </li>
 
+          <% if SocialStream.repository_models.present? %>
+              <li>
+                <%= link_to repository_path do %>
+                    <i class='icon_navbar-resources <%= current_header_icon_class(:resources) %>' title="<%= t 'header.icon.repository' %>" ></i>
+                <% end %>
+              </li>
+          <% end %>
+          <li>
+            <%= link_to conversations_path do %>
+                <i class='icon_navbar-message <%= current_header_icon_class(:messages) %>' title="<%= t 'header.icon.messages' %>"></i>
+            <% end %>
+          </li>
+          <li>
+            <%= render partial: 'layouts/header_dropdown_menu' %>
+          </li>
+        </ul></div>
 
-     <ul class="nav pull-right">
-      <li>
-        <%= link_to current_subject do %>
-          <%= image_tag current_subject.logo.url(:small), :class=>"user" %>
-          <span class="name hidden-phone"><%= truncate_name(current_subject.name, length: 15) %></span>
-        <% end %>
-      </li>
-      <li>
-        <%= link_to root_path do %>
-          <i class='icon_navbar-home <%= current_header_icon_class(:home) %>' title="<%= t 'header.icon.home' %>"></i>
-        <% end %>
-      </li>
+    </div>
+  </div></header>
 
-      <% if SocialStream.repository_models.present? %>
-      <li>
-      <%= link_to repository_path do %>
-        <i class='icon_navbar-resources <%= current_header_icon_class(:resources) %>' title="<%= t 'header.icon.repository' %>" ></i>
-      <% end %>
-      </li>
-      <% end %>
-      <li>
-        <%= link_to conversations_path do %>
-          <i class='icon_navbar-message <%= current_header_icon_class(:messages) %>' title="<%= t 'header.icon.messages' %>"></i>
-        <% end %>
-      </li>
-      <li>
-        <%= render partial: 'layouts/header_dropdown_menu' %>
-      </li>
-    </ul>
-  </nav>
-</header>
