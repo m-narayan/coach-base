@@ -60,6 +60,9 @@ ActiveRecord::Schema.define(:version => 20131029115516) do
     t.datetime "updated_at",         :null => false
   end
 
+  add_index "activity_object_audiences", ["activity_object_id"], :name => "activity_object_audiences_on_activity_object_id"
+  add_index "activity_object_audiences", ["relation_id"], :name => "activity_object_audiences_on_relation_id"
+
   create_table "activity_object_properties", :force => true do |t|
     t.integer "activity_object_id"
     t.integer "property_id"
@@ -236,9 +239,9 @@ ActiveRecord::Schema.define(:version => 20131029115516) do
 
   create_table "courses", :force => true do |t|
     t.integer  "activity_object_id"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.decimal  "price"
+    t.datetime "created_at",                                               :null => false
+    t.datetime "updated_at",                                               :null => false
+    t.decimal  "price",                     :precision => 10, :scale => 0
     t.string   "course_image_file_name"
     t.string   "course_image_content_type"
     t.integer  "course_image_file_size"
@@ -276,6 +279,7 @@ ActiveRecord::Schema.define(:version => 20131029115516) do
     t.integer  "course_id"
   end
 
+  add_index "events", ["activity_object_id"], :name => "events_on_activity_object_id"
   add_index "events", ["room_id"], :name => "index_events_on_room_id"
 
   create_table "groups", :force => true do |t|

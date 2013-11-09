@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   after_update :update_bbb_room
   after_create :create_bbb_room
 
-  validates_presence_of :course_id
+  validates_presence_of :course_id,:title
 
   validate :room_belongs_to_receiver
 
@@ -73,20 +73,20 @@ class Event < ActiveRecord::Base
   end
 
   def update_bbb_room
-    bigbluebutton_room.update_attributes(:param => self.permalink,
-                                         :name => self.permalink,
-                                         :private => !self.public)
+    bigbluebutton_room.update_attributes(:param => self.id,
+                                         :name => self.id,
+                                         :private => false)
   end
 
   def create_bbb_room
     create_bigbluebutton_room(:owner => self,
                               :server => BigbluebuttonServer.first,
-                              :param => self.permalink,
-                              :name => self.permalink,
-                              :private => !self.public,
-                              :moderator_password => self._moderator_password || SecureRandom.hex(4),
-                              :attendee_password => self._attendee_password || SecureRandom.hex(4),
-                              :logout_url => "/feedback/webconf/")
+                              :param => self.id,
+                              :name => self.id,
+                              :private => false,
+                              :moderator_password => "admin",
+                              :attendee_password => "admin",
+                              :logout_url => "/")
   end
 
 end

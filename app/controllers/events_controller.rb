@@ -3,10 +3,9 @@ class EventsController < ApplicationController
 
   before_filter :profile_or_current_subject!, :only => :index
 
-  def create
+  def new
     super
     @event.build_bigbluebutton_room
-    @event.save!
   end
 
 
