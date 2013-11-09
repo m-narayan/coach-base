@@ -6,11 +6,6 @@ class Event < ActiveRecord::Base
   belongs_to :room
   belongs_to  :course
   has_many  :payments
-=begin
-  has_one :bigbluebutton_room, :as => :owner, :dependent => :destroy
-  after_update :update_bbb_room
-  after_create :create_bbb_room
-=end
 
   validates_presence_of :course_id
 
@@ -73,24 +68,5 @@ class Event < ActiveRecord::Base
       errors.add(:room_id, :invalid)
     end
   end
-
-=begin
-  def update_bbb_room
-    bigbluebutton_room.update_attributes(:param => self.permalink,
-                                         :name => self.permalink,
-                                         :private => !self.public)
-  end
-
-  def create_bbb_room
-    create_bigbluebutton_room(:owner => self,
-                              :server => BigbluebuttonServer.first,
-                              :param => self.permalink,
-                              :name => self.permalink,
-                              :private => !self.public,
-                              :moderator_password => self._moderator_password || SecureRandom.hex(4),
-                              :attendee_password => self._attendee_password || SecureRandom.hex(4),
-                              :logout_url => "/feedback/webconf/")
-  end
-=end
 
 end
