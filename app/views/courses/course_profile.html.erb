@@ -31,8 +31,8 @@
                           <div style="text-align:center; padding-left: 20px;padding-right: 20px" >
                               <% @enrolled_events.each do |event|  %>
                                 <table  style="width: 100%;background-color: #bdd8eb" >
-                                  <tr>
-                                    <td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                  <tr><td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                  <tr><td colspan="2" style="text-align: justify" width="70" ><%= event.description %></td></tr>
                                   <tr><td style="text-align: justify" width="70">
                                     <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
@@ -59,8 +59,8 @@
                           <div style="text-align:center; padding-left: 20px;padding-right: 20px" >
                               <% @events.each do |event|  %>
                                 <table  style="width: 100%;background-color: #bdd8eb" >
-                                  <tr>
-                                    <td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                  <tr><td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                  <tr><td colspan="2" style="text-align: justify" width="70" ><%= event.description %></td></tr>
                                   <tr><td style="text-align: justify" width="70">
                                       <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
@@ -119,8 +119,8 @@
 
                               <% @other_events.each do |event|  %>
                                   <table  style="width: 100%;background-color: #bdd8eb" >
-                                    <tr>
-                                      <td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                    <tr><td colspan="2" style="text-align: justify" width="70" ><%= event.title %></td></tr>
+                                    <tr><td colspan="2" style="text-align: justify" width="70" ><%= event.description %></td></tr>
                                     <tr><td style="text-align: justify" width="70">
                                       <span class="label label-info"><%= event.start_at.strftime("%a, %b %d at %l%p")  %></span>
 
