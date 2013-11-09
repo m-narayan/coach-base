@@ -46,3 +46,4 @@ gem 'pg'
 
 gem 'client_side_validations'
 gem 'paypal-express'
+gem 'mysql2'
