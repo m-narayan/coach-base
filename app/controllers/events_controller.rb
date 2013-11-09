@@ -3,6 +3,13 @@ class EventsController < ApplicationController
 
   before_filter :profile_or_current_subject!, :only => :index
 
+  def create
+    super
+    @event.build_bigbluebutton_room
+    @event.save!
+  end
+
+
   def index
     index! do |format|
       format.js {
