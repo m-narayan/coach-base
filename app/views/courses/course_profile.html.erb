@@ -77,7 +77,7 @@
                         </div>
                       </div>
               <% end %>
-              <% if current_user.actor.user_type =="student" %>
+              <% if current_user!=nil and current_user.actor.user_type =="student" %>
               <div class="span4 pull-right" style="background:white; text-align:center; box-shadow:0px 0px 6px 0px; ">
                 <div class="accordion">
                   <div class="accordion-group">
