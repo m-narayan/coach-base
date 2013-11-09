@@ -3,7 +3,6 @@ class EventsController < ApplicationController
 
   before_filter :profile_or_current_subject!, :only => :index
 
-
   def index
     index! do |format|
       format.js {
