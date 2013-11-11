@@ -9,6 +9,7 @@
     <file path="/application.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384147468394" ignored="false" />
     <file path="/index.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384147508682" ignored="false" />
     <file path="/_footer.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384147596406" ignored="false" />
+    <file path="/.gitignore" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384148282143" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,15 +29,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Gemfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="49" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/application.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -91,10 +83,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_logo_in.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_logo_in.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/_logo_in.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="46" selection-start="138" selection-end="138" vertical-scroll-proportion="0.084586464">
+            <state line="3" column="46" selection-start="138" selection-end="138" vertical-scroll-proportion="-1.875">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="8" selection-start="438" selection-end="438" vertical-scroll-proportion="0.40467626">
               <folding />
             </state>
           </provider>
@@ -144,6 +145,7 @@
         <option value="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_logo_out.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/_logo_in.html.erb" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -770,7 +772,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_logo_in.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="46" selection-start="138" selection-end="138" vertical-scroll-proportion="0.084586464">
+        <state line="3" column="46" selection-start="138" selection-end="138" vertical-scroll-proportion="-1.875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="8" selection-start="438" selection-end="438" vertical-scroll-proportion="0.40467626">
           <folding />
         </state>
       </provider>
