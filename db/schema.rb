@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131111050551) do
+ActiveRecord::Schema.define(:version => 20131111063822) do
 
   create_table "activities", :force => true do |t|
     t.integer  "activity_verb_id"
@@ -134,6 +134,77 @@ ActiveRecord::Schema.define(:version => 20131111050551) do
   end
 
   add_index "authentications", ["user_id"], :name => "index_authentications_on_user_id"
+
+  create_table "bigbluebutton_metadata", :force => true do |t|
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "bigbluebutton_playback_formats", :force => true do |t|
+    t.integer  "recording_id"
+    t.string   "format_type"
+    t.string   "url"
+    t.integer  "length"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "bigbluebutton_recordings", :force => true do |t|
+    t.integer  "server_id"
+    t.integer  "room_id"
+    t.string   "recordid"
+    t.string   "meetingid"
+    t.string   "name"
+    t.boolean  "published",  :default => false
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.boolean  "available",  :default => true
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "bigbluebutton_recordings", ["recordid"], :name => "index_bigbluebutton_recordings_on_recordid", :unique => true
+  add_index "bigbluebutton_recordings", ["room_id"], :name => "index_bigbluebutton_recordings_on_room_id"
+
+  create_table "bigbluebutton_rooms", :force => true do |t|
+    t.integer  "server_id"
+    t.integer  "owner_id"
+    t.string   "owner_type"
+    t.string   "meetingid"
+    t.string   "name"
+    t.string   "attendee_password"
+    t.string   "moderator_password"
+    t.string   "welcome_msg"
+    t.string   "logout_url"
+    t.string   "voice_bridge"
+    t.string   "dial_number"
+    t.integer  "max_participants"
+    t.boolean  "private",            :default => false
+    t.boolean  "external",           :default => false
+    t.string   "param"
+    t.boolean  "record",             :default => false
+    t.integer  "duration",           :default => 0
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+  end
+
+  add_index "bigbluebutton_rooms", ["meetingid"], :name => "index_bigbluebutton_rooms_on_meetingid", :unique => true
+  add_index "bigbluebutton_rooms", ["server_id"], :name => "index_bigbluebutton_rooms_on_server_id"
+  add_index "bigbluebutton_rooms", ["voice_bridge"], :name => "index_bigbluebutton_rooms_on_voice_bridge", :unique => true
+
+  create_table "bigbluebutton_servers", :force => true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.string   "salt"
+    t.string   "version"
+    t.string   "param"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.integer  "activity_object_id"
@@ -403,6 +474,7 @@ ActiveRecord::Schema.define(:version => 20131111050551) do
     t.boolean  "connected",                             :default => false
     t.string   "status",                                :default => "available"
     t.boolean  "chat_enabled",                          :default => true
+    t.string   "user_type"
   end
 
   add_index "users", ["actor_id"], :name => "index_users_on_actor_id"
