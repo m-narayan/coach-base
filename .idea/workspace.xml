@@ -4,7 +4,7 @@
     <list default="true" id="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" name="Default" comment="" />
     <ignored path="coach-base.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384145846577" ignored="false" />
+    <file path="/Dummy.txt" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384344466065" ignored="false" />
     <file path="/application.rb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384146377543" ignored="false" />
     <file path="/application.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384335439823" ignored="false" />
     <file path="/index.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384325854089" ignored="false" />
@@ -37,6 +37,7 @@
     <file path="/show.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384339937143" ignored="false" />
     <file path="/Gemfile" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384341899509" ignored="false" />
     <file path="/sphinx.yml" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384342445231" ignored="false" />
+    <file path="/_subject.html.erb" changelist="a3e210c3-3d9c-47bd-8359-0ae0274e1d57" time="1384344922105" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,16 +116,25 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="19" column="78" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0">
               <folding>
-                <marker date="1384337966105" expanded="true" signature="806:1506" placeholder="..." />
+                <marker date="1384344308139" expanded="true" signature="806:1506" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Gemfile" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="71" selection-start="30" selection-end="30" vertical-scroll-proportion="-0.6268657">
+            <state line="31" column="96" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_subject.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/toolbar/_subject.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="42" selection-start="656" selection-end="656" vertical-scroll-proportion="0.375">
               <folding />
             </state>
           </provider>
@@ -157,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/devise/registrations/coach.html.erb" />
         <option value="$PROJECT_DIR$/app/views/registrations/coach_registration.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/registrations_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
@@ -173,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/views/courses/show.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/config/sphinx.yml" />
+        <option value="$PROJECT_DIR$/app/views/toolbar/_subject.html.erb" />
       </list>
     </option>
   </component>
@@ -200,7 +210,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="1" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -288,26 +298,8 @@
               <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="coach-base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="coach-base" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devise" />
+              <option name="myItemId" value="toolbar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -326,14 +318,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="devise" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="registrations" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,7 +344,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../coach-base-bak" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="GoToClass.includeJavaFiles" value="false" />
@@ -638,7 +622,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2743161" sideWeight="0.6372549" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3627451" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3627451" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -716,13 +700,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/courses/_group.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="42" selection-start="70" selection-end="70" vertical-scroll-proportion="-1.25">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.3-p448@coach-base/gems/social_stream-base-2.2.2/app/views/groups/_group.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="58" selection-start="68" selection-end="68" vertical-scroll-proportion="-0.625">
@@ -811,7 +788,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="78" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1384337966105" expanded="true" signature="806:1506" placeholder="..." />
+            <marker date="1384344308139" expanded="true" signature="806:1506" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -825,7 +802,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="71" selection-start="30" selection-end="30" vertical-scroll-proportion="-0.6268657">
+        <state line="31" column="96" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/toolbar/_subject.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="42" selection-start="656" selection-end="656" vertical-scroll-proportion="0.375">
           <folding />
         </state>
       </provider>
