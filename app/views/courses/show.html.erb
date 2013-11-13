@@ -1,17 +1,8 @@
-<p id="notice"><%= notice %></p>
+<%= render partial: 'toolbar/profile', locals: { subject: @course } %>
 
-<p>
-  <b>Id:</b>
-  <%= @course.id %>
-</p>
+<%= render :partial => "activities/index",
+           :locals  => { section: @course,
+                         owner:   @course } %>
 
-<p>
-  <b>Activity object:</b>
-  <%= @course.activity_object_id %>
+<%= render partial: 'sidebar/show' %>
 
-
-</p>
-
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>

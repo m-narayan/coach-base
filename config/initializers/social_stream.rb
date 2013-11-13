@@ -9,7 +9,7 @@ SocialStream.setup do |config|
   
   # List of subjects that can be accessed by the client browser or the API
   #
-  # config.routed_subjects += [:course]
+  config.routed_subjects += [:course]
   # Include devise modules in User. See devise documentation for details.
   # Others available are:
   # :confirmable, :lockable, :timeoutable, :validatable
@@ -39,12 +39,20 @@ SocialStream.setup do |config|
         ]
       }},
     'site/current' => {},
-    'course' => {}
+    course:{
+        friend: {
+            name: "friend",
+            permissions: [
+                [ 'follow' ],
+                [ 'create',  'activity' ],
+                [ 'read',    'activity' ]
+            ]
+        }}
   }
 
   # Configure the type of actors that are suggested in the sidebar
   #
-  #config.suggested_models += [:course]
+  config.suggested_models += [:course]
  
   ## Objects
 
@@ -62,7 +70,7 @@ SocialStream.setup do |config|
   #
   # You must create a vew in app/views/your_objects/_your_object.hmtl.erb
   #
-  # config.repository_models = [ :document, :event, :link, :place ]
+  config.repository_models = [ :document, :event, :link, :place ]
 
   # Quick search (header) and Extended search models and its order. Remember to create
   # the indexes with thinking-sphinx and the views at
