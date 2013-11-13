@@ -1,0 +1,19 @@
+<div id="toolbar" class="toolbar-profile">
+  <div class="logo_home">
+    <%= link_to (image_tag(current_subject.logo.url(:medium) , :size => "small", :alt => current_subject.name )), current_subject  %>
+  </div>
+  <h5>
+    <%= link_to truncate_name(current_subject.name, :length => 80), current_subject %>
+  </h5>
+  <nav class="toolbar_menu">
+    <ul class="nav">
+      <% if current_user.user_type =="coach" %>
+          <li><%= link_to "Add Course" ,new_course_path %>    </li>
+          <li><%= link_to "Manage Course" ,courses_path %></li>
+          <li><%= link_to "Add Schedule" ,new_course_path %>    </li>
+          <li><%= link_to "Manage Schedule" ,courses_path %></li>
+
+      <% end  %>
+    </ul>
+  </nav>
+</div>

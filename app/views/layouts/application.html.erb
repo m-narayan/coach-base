@@ -3,7 +3,7 @@
 <html lang="<%= I18n.locale.to_s %>">
   <head>
     <meta charset="utf-8">
-    <title><%= content_for?(:title) ? yield(:title) : t('site.current.title') %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Coach base | Home" %></title>
     <meta name="keywords" content="<%= content_for?(:keywords) ? yield(:keywords) : t('site.current.keywords') %>" >
     <meta name="description" content= "<%= content_for?(:description) ? yield(:description) : t('site.current.description') %>" >
     <meta name="generator" content="Social Stream" />

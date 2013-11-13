@@ -1,0 +1,8 @@
+<%= render partial: 'toolbar/profile', locals: { subject: @course } %>
+
+<%= render :partial => "activities/index",
+           :locals  => { section: @course,
+                         owner:   @course } %>
+
+<%= render partial: 'sidebar/show' %>
+

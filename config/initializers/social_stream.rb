@@ -4,12 +4,12 @@ SocialStream.setup do |config|
   # List the models that are social entities. These will have ties between them.
   # Remember you must add an "actor_id" foreign key column to your migration!
   #
-   config.subjects = [:user, :group, :course]
+
+  config.subjects += [:course]
   
   # List of subjects that can be accessed by the client browser or the API
   #
-   config.routed_subjects = [:user, :group ,:course]
-
+  config.routed_subjects += [:course]
   # Include devise modules in User. See devise documentation for details.
   # Others available are:
   # :confirmable, :lockable, :timeoutable, :validatable
@@ -18,32 +18,41 @@ SocialStream.setup do |config|
   #                         :omniauthable, :token_authenticatable
   
   # Config the default relations that will be created and customized by actors
-  # config.custom_relations = {
-  #  user: {
-  #    friend: {
-  #      name: "friend",
-  #      permissions: [
-  #        [ 'follow' ],
-  #        [ 'create',  'activity' ],
-  #        [ 'read',    'activity' ]
-  #      ]
-  #    },
-  #  group: {
-  #    member: {
-  #      name: "member",
-  #      permissions: [
-  #        [ 'represent' ],
-  #        [ 'create', 'activity' ],
-  #        [ 'read',   'activity' ],
-  #        [ 'read',   'tie' ]
-  #      ]
-  #    },
-  #  'site/current' => {}
-  # }
+  config.custom_relations = {
+    user: {
+      friend: {
+        name: "friend",
+        permissions: [
+          [ 'follow' ],
+          [ 'create',  'activity' ],
+          [ 'read',    'activity' ]
+        ]
+      }},
+    group: {
+      member: {
+        name: "member",
+        permissions: [
+          [ 'represent' ],
+          [ 'create', 'activity' ],
+          [ 'read',   'activity' ],
+          [ 'read',   'tie' ]
+        ]
+      }},
+    'site/current' => {},
+    course:{
+        friend: {
+            name: "friend",
+            permissions: [
+                [ 'follow' ],
+                [ 'create',  'activity' ],
+                [ 'read',    'activity' ]
+            ]
+        }}
+  }
 
   # Configure the type of actors that are suggested in the sidebar
   #
-  config.suggested_models = [ :user, :group,:course ]
+  config.suggested_models += [:course]
  
   ## Objects
 
@@ -61,7 +70,7 @@ SocialStream.setup do |config|
   #
   # You must create a vew in app/views/your_objects/_your_object.hmtl.erb
   #
-  # config.repository_models = [ :document, :event, :link, :place ]
+  config.repository_models = [ :document, :event, :link, :place ]
 
   # Quick search (header) and Extended search models and its order. Remember to create
   # the indexes with thinking-sphinx and the views at
