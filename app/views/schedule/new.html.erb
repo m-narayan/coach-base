@@ -1,0 +1,38 @@
+<%  provide(:title ,"New Schedule" )%>
+<section id="home">
+  <%= render partial: 'toolbar/home' %>
+<div class="span8">
+<h3>Add Course</h3>
+<%= form_for @course ,:validate => true do |f| %>
+    <% if f.object.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(f.object.errors.count, "error") %> evitaron que se guardara esta actividad:</h2>
+
+          <ul>
+            <% f.object.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <section>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </section>
+    <section>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </section>
+    <section>
+      <%= f.label :price %>
+      <%= f.text_field :price, :style=>"width:100px !important;"%>
+    </section>
+
+    <%= f.submit nil , :class=> "btn-primary"%>
+<% end %>
+</div>
+  <% if current_user.user_type =="coach" %>
+      <%= render partial: 'sidebar/show' %>
+  <% end  %>
+
+</section>
